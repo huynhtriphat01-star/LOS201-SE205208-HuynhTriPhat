@@ -1,0 +1,6 @@
+make -f ./scripts/Makefile.build obj=/home/khanh/embedded_asgn2/driver \
+single-build= \
+need-builtin=1 need-modorder=1
+sh ./scripts/modules-check.sh /home/khanh/embedded_asgn2/driver/modules.order
+make -f ./scripts/Makefile.modpost
+make -f ./scripts/Makefile.modfinal

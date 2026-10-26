@@ -1,0 +1,9 @@
+make -C /home/khanh/embedded_lab1/kernel/linux-5.15 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- M=/home/khanh/embedded_asgn2/driver modules
+/tmp/ccYSRQFO.s: Assembler messages:
+/tmp/ccYSRQFO.s:195: Error: selected processor does not support `isb' in ARM mode
+/tmp/ccYSRQFO.s:237: Error: selected processor does not support `isb' in ARM mode
+/tmp/ccYSRQFO.s:1304: Error: selected processor does not support `isb' in ARM mode
+/tmp/ccYSRQFO.s:1343: Error: selected processor does not support `isb' in ARM mode
+make[2]: *** [scripts/Makefile.build:277: /home/khanh/embedded_asgn2/driver/sms_sensor_driver.o] Error 1
+make[1]: *** [Makefile:1868: /home/khanh/embedded_asgn2/driver] Error 2
+make: *** [Makefile:6: arm] Error 2

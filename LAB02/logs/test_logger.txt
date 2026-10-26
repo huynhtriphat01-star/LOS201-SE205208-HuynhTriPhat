@@ -1,0 +1,3 @@
+PERIODIC FLUSH: PASS
+Records: 13  Rotations: 3  Flushes: 2  Errors: 0
+LOGGER THREAD TEST: PASS

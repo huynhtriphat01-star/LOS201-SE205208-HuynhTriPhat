@@ -1,0 +1,12 @@
+# Reference build scaffold, NOT completed app logic.
+SOURCES := sms_app.c sensor_thread.c processor_thread.c alert_thread.c logger_thread.c circular_buffer.c
+COMMON := -g -O1 -Wall -Wextra -Werror -pthread -I../driver
+LDLIBS := -lm -lrt -pthread
+.PHONY: arm host clean
+arm:
+	arm-linux-gnueabihf-gcc $(COMMON) -march=armv7-a -mfpu=neon-vfpv3 -mfloat-abi=hard -static \
+		-o sms_app $(SOURCES) $(LDLIBS)
+host:
+	gcc $(COMMON) -o sms_app_x86 $(SOURCES) $(LDLIBS)
+clean:
+	rm -f sms_app sms_app_x86

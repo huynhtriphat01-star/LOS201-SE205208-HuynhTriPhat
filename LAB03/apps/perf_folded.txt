@@ -1,0 +1,2 @@
+perf_target;[unknown];__ieee754_log_fma 31172531
+perf_target;[unknown];heavy_compute 28103386

@@ -1,0 +1,16 @@
+perf_target   45600 20776.877696:    5050505 cpu_core/cycles/P: 
+	    7739a747423e __ieee754_log_fma+0x7e (/usr/lib/x86_64-linux-gnu/libm.so.6)
+	40b9630000000000 [unknown] ([unknown])
+
+perf_target   45600 20776.879767:    8969404 cpu_core/cycles/P: 
+	    7739a747426f __ieee754_log_fma+0xaf (/usr/lib/x86_64-linux-gnu/libm.so.6)
+	40ca688000000000 [unknown] ([unknown])
+
+perf_target   45600 20776.883729:   17152622 cpu_core/cycles/P: 
+	    7739a74741dd __ieee754_log_fma+0x1d (/usr/lib/x86_64-linux-gnu/libm.so.6)
+	40ed986000000000 [unknown] ([unknown])
+
+perf_target   45600 20776.890198:   28103386 cpu_core/cycles/P: 
+	    5f4010967282 heavy_compute+0x22 (/home/khanh/embedded_lab3/apps/perf_target)
+	40ebb50000000000 [unknown] ([unknown])
+

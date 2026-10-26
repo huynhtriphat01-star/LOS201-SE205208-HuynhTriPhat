@@ -1,0 +1,614 @@
+Script started on 2026-10-20 17:43:29+07:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="114" LINES="34"]
+]666;vte.shell.postexec=0\]7;file://KhanhHTSE201563/home/khanh/embedded_asgn2\]0;khanh@KhanhHTSE201563:~/embedded_asgn2\]666;vte.shell.precmd!\[?2004h]0;khanh@KhanhHTSE201563: ~/embedded_asgn2[01;32mkhanh@KhanhHTSE201563[00m:[01;34m~/embedded_asgn2[00m$ exit[1Pẽ[C[Cqemu-system-arm   -M vexpress-a9   -cpu cortex-a9   -m 512M   -smp 2   -nographic   -kernel ~/embedded_lab1/output/zImage   -dtb ~/embedded_lab1/output/vexpress-v2p-ca9.dtb   -initrd ~/embedded_asgn2/output/initramfs_asgn2.cpio.gz   -append 'console=ttyAMA0,115200 rdinit=/sbin/init mem=512M'[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit [K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cqemu-system-arm   -M vexpress-a9   -cpu cortex-a9   -m 512M   -smp 2   -nographic   -kernel ~/embedded_lab1/output/zImage   -dtb ~/embedded_lab1/output/vexpress-v2p-ca9.dtb   -initrd ~/embedded_asgn2/output/initramfs_asgn2.cpio.gz   -append 'console=ttyAMA0,115200 rdinit=/sbin/init mem=512M'
+[?2004l]133;C\]666;vte.shell.preexec!\Booting Linux on physical CPU 0x0
+Linux version 5.15.0 (khanh@KhanhHTSE201563) (arm-linux-gnueabihf-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, GNU ld (GNU Binutils for Ubuntu) 2.46) #2 SMP Tue Oct 20 16:21:05 +07 2026
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writealloc
+Reserved memory: created DMA memory pool at 0x4c000000, size 8 MiB
+OF: reserved mem: initialized node vram@4c000000, compatible id shared-dma-pool
+cma: Reserved 16 MiB at 0x7f000000
+Zone ranges:
+  Normal   [mem 0x0000000060000000-0x000000007fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000060000000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000060000000-0x000000007fffffff]
+percpu: Embedded 15 pages/cpu s30156 r8192 d23092 u61440
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0,115200 rdinit=/sbin/init mem=512M
+printk: log_buf_len individual max cpu contribution: 4096 bytes
+printk: log_buf_len total cpu_extra contributions: 12288 bytes
+printk: log_buf_len min size: 16384 bytes
+printk: log_buf_len: 32768 bytes
+printk: early log buf free: 14988(91%)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+Memory: 484984K/524288K available (8192K kernel code, 594K rwdata, 1784K rodata, 1024K init, 150K bss, 22920K reserved, 16384K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+trace event string verifier disabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU event tracing is enabled.
+rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+L2C: platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C: DT/platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating disabled, standby mode disabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x46420001
+random: get_random_bytes called from start_kernel+0x4f8/0x6ac with crng_init=0
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+clocksource: arm,sp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+Failed to initialize '/bus@40000000/motherboard-bus@40000000/iofpga@7,00000000/timer@12000': -22
+smp_twd: clock not found -2
+Console: colour dummy device 80x30
+Calibrating local timer... 95.64MHz.
+Calibrating delay loop... 1875.96 BogoMIPS (lpj=9379840)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x60100000 - 0x60100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+CPU2: failed to boot: -38
+CPU3: failed to boot: -38
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (3804.36 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+hw-breakpoint: debug architecture 0x4 unsupported.
+Serial: AMBA PL011 UART driver
+irq: type mismatch, failed to map hwirq-75 for interrupt-controller@1e001000!
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm,sp804
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Unpacking initramfs...
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 7 counters available
+workingset: timestamp_bits=30 max_order=17 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+9p: Installing v9fs 9p2000 file system support
+io scheduler mq-deadline registered
+io scheduler kyber registered
+sii902x 0-0060: supply iovcc not found, using dummy regulator
+sii902x 0-0060: supply cvcc12 not found, using dummy regulator
+Freeing initrd memory: 5896K
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x40000000-0x43ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x44000000-0x47ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+Concatenating MTD devices:
+(0): "40000000.flash"
+(1): "40000000.flash"
+into device "40000000.flash"
+physmap-flash 48000000.psram: physmap platform flash device: [mem 0x48000000-0x49ffffff]
+libphy: Fixed MDIO Bus: probed
+libphy: smsc911x-mdio: probed
+smsc911x 4e000000.ethernet eth0: MAC Address: 52:54:00:12:34:56
+isp1760 4f000000.usb: isp1760 bus width: 32, oc: digital
+isp1760 4f000000.usb: NXP ISP1760 USB Host Controller
+isp1760 4f000000.usb: new USB bus registered, assigned bus number 1
+isp1760 4f000000.usb: Scratch test failed. 0x00000000
+isp1760 4f000000.usb: can't setup: -19
+isp1760 4f000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_PACKET protocol family
+9pnet: Installing 9P2000 support
+Registering SWP/SWPB emulation handler
+aaci-pl041 10004000.aaci: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+aaci-pl041 10004000.aaci: FIFO 512 entries
+mmci-pl18x 10005000.mmci: Got CD GPIO
+mmci-pl18x 10005000.mmci: Got WP GPIO
+mmci-pl18x 10005000.mmci: mmc0: PL181 manf 41 rev0 at 0x10005000 irq 33,34 (pio)
+10009000.uart: ttyAMA0 at MMIO 0x10009000 (irq = 37, base_baud = 0) is a PL011 rev1
+printk: console [ttyAMA0] enabled
+1000a000.uart: ttyAMA1 at MMIO 0x1000a000 (irq = 38, base_baud = 0) is a PL011 rev1
+1000b000.uart: ttyAMA2 at MMIO 0x1000b000 (irq = 39, base_baud = 0) is a PL011 rev1
+1000c000.uart: ttyAMA3 at MMIO 0x1000c000 (irq = 40, base_baud = 0) is a PL011 rev1
+rtc-pl031 10017000.rtc: registered as rtc0
+rtc-pl031 10017000.rtc: setting system clock to 2026-10-20T10:44:18 UTC (1792493058)
+amba 10020000.clcd: Fixing up cyclic dependency with 0-0039
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+sii902x 0-0039: supply iovcc not found, using dummy regulator
+sii902x 0-0039: supply cvcc12 not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+drm-clcd-pl111 1001f000.clcd: assigned reserved memory node vram@4c000000
+drm-clcd-pl111 1001f000.clcd: using device-specific reserved memory
+drm-clcd-pl111 1001f000.clcd: core tile graphics present
+drm-clcd-pl111 1001f000.clcd: this device will be deactivated
+drm-clcd-pl111 1001f000.clcd: Versatile Express init failed - -19
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+drm-clcd-pl111 10020000.clcd: found bridge on endpoint 0
+drm-clcd-pl111 10020000.clcd: Using non-panel bridge
+[drm] Initialized pl111 1.0.0 20170317 for 10020000.clcd on minor 0
+input: AT Raw Set 2 keyboard as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10006000.kmi/serio0/input/input0
+Console: switching to colour frame buffer device 128x48
+drm-clcd-pl111 10020000.clcd: [drm] fb0: pl111 frame buffer device
+ALSA device list:
+  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+Freeing unused kernel image (initmem) memory: 1024K
+Run /sbin/init as init process
+[ LAB-02 ] Starting system initialization...
+[ LAB-02 ] Loading lab2_driver module...
+lab2_driver: loading out-of-tree module taints kernel.
+lab2_driver: initializing module
+lab2_driver: /proc/lab2_info created
+lab2_driver: loaded, major=240
+[ LAB-02 ] lab2_driver loaded OK
+[ LAB-02 ] /dev/lab2 created (major=240, minor=0)
+[ LAB-02 ] System initialization complete!
+
+Please press Enter to activate this console. input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+random: fast init done
+[A^[[A^[[A
+/ # echo "===== LOAD DRIVER ====="
+===== LOAD DRIVER =====
+/ # 
+/ # insmod /lib/modules/sms_sensor_driver.ko
+sms_sensor: driver initialized
+/ # 
+/ # echo "===== TEST SCHED_OTHER ====="
+===== TEST SCHED_OTHER =====
+/ # 
+/ # /usr/bin/sms_app \
+>   --sched other \
+>   -i 100 \
+>   -d 10 \
+>   > /tmp/other_deadline_test.txt 2>&1
+/ # 
+/ # grep -E \
+> '^(ACTUAL_SENSOR_SCHED|SUMMARY|SENSOR_DIAG|SCHED_DIAG|JITTER|HIST)' \
+> /tmp/other_deadline_test.txt
+ACTUAL_SENSOR_SCHED policy=OTHER priority=0
+SCHED_DIAG missed_deadlines=9
+SUMMARY produced=91 consumed=91 dropped_buffer=0 processed=91 alerts=97 temp=13 hum=19 spike=65 logged=188 sink_drop_alarm=0 sink_drop_log=0
+SENSOR_DIAG eagain=238 read_errors=0 successful=91
+JITTER mode=OTHER n=91 min_us=241 avg_us=5353.96 max_us=9737 p99_us=9737
+HIST lt100=0 100to499=4 500to999=1 ge1000=86
+/ # 
+/ # echo "===== TEST SCHED_FIFO ====="
+===== TEST SCHED_FIFO =====
+/ # 
+/ # /usr/bin/sms_app \
+>   --sched fifo \
+>   -i 100 \
+>   -d 10 \
+>   > /tmp/fifo_deadline_test.txt 2>&1
+/ # 
+/ # grep -E \
+> '^(ACTUAL_SENSOR_SCHED|SUMMARY|SENSOR_DIAG|SCHED_DIAG|JITTER|HIST)' \
+> /tmp/fifo_deadline_test.txt
+ACTUAL_SENSOR_SCHED policy=FIFO priority=50
+SCHED_DIAG missed_deadlines=9
+SUMMARY produced=92 consumed=92 dropped_buffer=0 processed=92 alerts=95 temp=15 hum=15 spike=65 logged=187 sink_drop_alarm=0 sink_drop_log=0
+SENSOR_DIAG eagain=227 read_errors=0 successful=92
+JITTER mode=FIFO n=92 min_us=773 avg_us=5376.28 max_us=9863 p99_us=9863
+HIST lt100=0 100to499=0 500to999=4 ge1000=88
+/ # 
+/ # echo "===== E.10 FINISHED ====="
+===== E.10 FINISHED =====
+/ # echo "========================================"
+========================================
+/ # echo " E.11 FINAL REAL-TIME BENCHMARK"
+ E.11 FINAL REAL-TIME BENCHMARK
+/ # echo "========================================"
+========================================
+/ # 
+/ # for MODE in other fifo
+> do
+>     echo
+>     echo "========================================"
+>     echo " TEST MODE: $MODE"
+>     echo "========================================"
+> 
+>     BEFORE=$(awk '/^read_count:/ {print $2}' /proc/sms_stats)
+> 
+>     /usr/bin/sms_app \
+>       --sched "$MODE" \
+>       -i 100 \
+>       -d 120 \
+>       --log "/tmp/sms_final_${MODE}.log" \
+>       > "/tmp/rt_final_${MODE}.txt" 2>&1
+> 
+>     RC=$?
+> 
+>     AFTER=$(awk '/^read_count:/ {print $2}' /proc/sms_stats)
+> 
+>     echo "===== EXIT STATUS ====="
+>     echo "EXIT_CODE=$RC"
+> 
+>     echo "===== DRIVER READ COUNT ====="
+>     echo "DRIVER_READ_DELTA=$((AFTER - BEFORE))"
+> 
+>     echo "===== APPLICATION RESULTS ====="
+> 
+>     grep -E \
+>       '^(ACTUAL_SENSOR_SCHED|SCHED_DIAG|SUMMARY|SENSOR_DIAG|JITTER|HIST)' \
+>       "/tmp/rt_final_${MODE}.txt"
+> 
+>     echo "===== CHECK SAMPLE COUNT ====="
+> 
+>     awk '
+>     /^JITTER / {
+>         for (i = 1; i <= NF; i++) {
+>             if ($i ~ /^n=/) {
+>                 split($i, a, "=")
+>                 if (a[2] >= 1000)
+>                     print "SAMPLE_COUNT: PASS", a[2]
+>                 else
+>                     print "SAMPLE_COUNT: FAIL", a[2]
+>             }
+>         }
+>     }' "/tmp/rt_final_${MODE}.txt"
+> 
+>     echo "===== MODE $MODE COMPLETED ====="
+> done
+
+========================================
+ TEST MODE: other
+========================================
+
+===== EXIT STATUS =====
+EXIT_CODE=0
+===== DRIVER READ COUNT =====
+DRIVER_READ_DELTA=1092
+===== APPLICATION RESULTS =====
+ACTUAL_SENSOR_SCHED policy=OTHER priority=0
+SCHED_DIAG missed_deadlines=109
+SUMMARY produced=1092 consumed=1092 dropped_buffer=0 processed=1092 alerts=1092 temp=160 hum=189 spike=743 logged=2184 sink_drop_alarm=0 sink_drop_log=0
+SENSOR_DIAG eagain=2626 read_errors=0 successful=1092
+JITTER mode=OTHER n=1092 min_us=359 avg_us=5627.29 max_us=11315 p99_us=10680
+HIST lt100=0 100to499=1 500to999=6 ge1000=1085
+===== CHECK SAMPLE COUNT =====
+SAMPLE_COUNT: PASS 1092
+===== MODE other COMPLETED =====
+
+========================================
+ TEST MODE: fifo
+========================================
+===== EXIT STATUS =====
+EXIT_CODE=0
+===== DRIVER READ COUNT =====
+DRIVER_READ_DELTA=1092
+===== APPLICATION RESULTS =====
+ACTUAL_SENSOR_SCHED policy=FIFO priority=50
+SCHED_DIAG missed_deadlines=108
+SUMMARY produced=1092 consumed=1092 dropped_buffer=0 processed=1092 alerts=1121 temp=179 hum=183 spike=759 logged=2213 sink_drop_alarm=0 sink_drop_log=0
+SENSOR_DIAG eagain=2625 read_errors=0 successful=1092
+JITTER mode=FIFO n=1092 min_us=251 avg_us=5497.91 max_us=10873 p99_us=10495
+HIST lt100=0 100to499=1 500to999=1 ge1000=1090
+===== CHECK SAMPLE COUNT =====
+SAMPLE_COUNT: PASS 1092
+===== MODE fifo COMPLETED =====
+/ # 
+/ # echo
+
+/ # echo "========================================"
+========================================
+/ # echo " E.11 BENCHMARK FINISHED"
+ E.11 BENCHMARK FINISHED
+/ # echo "========================================"
+========================================
+/ # 
+/ # QEMU: Terminated
+]666;vte.shell.postexec=0\]7;file://KhanhHTSE201563/home/khanh/embedded_asgn2\]0;khanh@KhanhHTSE201563:~/embedded_asgn2\]666;vte.shell.precmd!\[?2004h]0;khanh@KhanhHTSE201563: ~/embedded_asgn2[01;32mkhanh@KhanhHTSE201563[00m:[01;34m~/embedded_asgn2[00m$ 
+[?2004l]666;vte.shell.postexec=0\]7;file://KhanhHTSE201563/home/khanh/embedded_asgn2\]0;khanh@KhanhHTSE201563:~/embedded_asgn2\]666;vte.shell.precmd!\[?2004h]0;khanh@KhanhHTSE201563: ~/embedded_asgn2[01;32mkhanh@KhanhHTSE201563[00m:[01;34m~/embedded_asgn2[00m$ [7mcd ~/LOS201_Lab[27m
+
+[7mecho "===== 1. CHECK REPOSITORY ====="[27m
+[7mpwd[27m
+
+[7mecho "===== 2. CHECK REMOTE ====="[27m
+[7mgit remote -v[27m
+
+[7mecho "===== 3. CHECK BRANCH ====="[27m
+[7mgit branch --show-current[27m
+
+[7mecho "===== 4. CHECK LOCAL CHANGES ====="[27m
+[7mgit status[27m
+
+[7mecho "===== 5. CHECK ASSIGNMENT 02 ====="[27m
+[7mls -lah asgn02/[27m
+
+[7mecho "===== 6. CHECK FOLDER STRUCTURE ====="[27m
+[7mfind asgn02 -maxdepth 3 -type f | head -50[27m
+
+[7mecho "===== 7. CHECK LAST COMMIT ====="[27m
+[7mgit log -1 --oneline[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A]0;khanh@KhanhHTSE201563: ~/embedded_asgn2[01;32mkhanh@KhanhHTSE201563[00m:[01;34m~/embedded_asgn2[00m$ cd ~/LOS201_Lab
+
+echo "===== 1. CHECK REPOSITORY ====="
+pwd
+
+echo "===== 2. CHECK REMOTE ====="
+git remote -v
+
+echo "===== 3. CHECK BRANCH ====="
+git branch --show-current
+
+echo "===== 4. CHECK LOCAL CHANGES ====="
+git status
+
+echo "===== 5. CHECK ASSIGNMENT 02 ====="
+ls -lah asgn02/
+
+echo "===== 6. CHECK FOLDER STRUCTURE ====="
+find asgn02 -maxdepth 3 -type f | head -50
+
+echo "===== 7. CHECK LAST COMMIT ====="
+git log -1 --oneline
+[?2004l]133;C\]666;vte.shell.preexec!\]133;C\]666;vte.shell.preexec!\===== 1. CHECK REPOSITORY =====
+]133;C\]666;vte.shell.preexec!\/home/khanh/LOS201_Lab
+]133;C\]666;vte.shell.preexec!\===== 2. CHECK REMOTE =====
+]133;C\]666;vte.shell.preexec!\origin	https://github.com/hoangtrkhanh/LOS201_Lab.git (fetch)
+origin	https://github.com/hoangtrkhanh/LOS201_Lab.git (push)
+]133;C\]666;vte.shell.preexec!\===== 3. CHECK BRANCH =====
+]133;C\]666;vte.shell.preexec!\main
+]133;C\]666;vte.shell.preexec!\===== 4. CHECK LOCAL CHANGES =====
+]133;C\]666;vte.shell.preexec!\On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   Assignment-02-Smart-Monitoring/.gitignore[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/Makefile[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/include/alert_thread.h[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/include/circular_buffer.h[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/include/logger_thread.h[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/include/processor_thread.h[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/include/sensor_thread.h[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/include/sms_ipc.h[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/include/sms_types.h[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/src/alert_thread.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/src/circular_buffer.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/src/logger_thread.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/src/processor_thread.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/src/sensor_thread.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/src/sms_app.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/tests/test_alert.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/tests/test_logger.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/tests/test_processor.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/app/tests/test_sensor.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/awk[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/cat[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/done[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/driver/Makefile[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/driver/sms_sensor.h[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/driver/sms_sensor_driver.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/driver/sms_sensor_driver.mod[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/echo[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/else[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/fi[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/grep[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/logs/e11_final_summary.csv[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/logs/gdb_session.txt[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/logs/perf_sms.txt[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/logs/qemu_deadline_test.txt[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/logs/qemu_realtime_console.txt[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/logs/strace_sms.txt[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/logs/valgrind_sms.txt[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/tests/test_ioctl.c[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/tests/test_ioctl_arm[m
+	[32mnew file:   Assignment-02-Smart-Monitoring/then[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mREADME.md.bak_20261020_012704[m
+	[31mgn02 -maxdepth 3 -type f[m
+
+]133;C\]666;vte.shell.preexec!\===== 5. CHECK ASSIGNMENT 02 =====
+]133;C\]666;vte.shell.preexec!\total 20K
+drwxrwxr-x 4 khanh khanh 4.0K Oct 20 01:27 [0m[01;34m.[0m
+drwxrwxr-x 9 khanh khanh 4.0K Oct 20 18:22 [01;34m..[0m
+-rw-rw-r-- 1 khanh khanh  148 Oct 20 01:23 .gitignore
+drwxrwxr-x 2 khanh khanh 4.0K Oct 20 01:23 [01;34mdriver[0m
+drwxrwxr-x 2 khanh khanh 4.0K Oct 20 01:23 [01;34mtests[0m
+]133;C\]666;vte.shell.preexec!\===== 6. CHECK FOLDER STRUCTURE =====
+]133;C\]666;vte.shell.preexec!\asgn02/.gitignore
+asgn02/driver/sms_sensor.h
+asgn02/driver/sms_sensor_driver.c
+asgn02/driver/Makefile
+asgn02/tests/test_ioctl.c
+]133;C\]666;vte.shell.preexec!\===== 7. CHECK LAST COMMIT =====
+]133;C\]666;vte.shell.preexec!\[?1h=[33m86d7f47[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m docs: reorganize labs and assignments README[m
+[K[?1l>]666;vte.shell.postexec=0\]7;file://KhanhHTSE201563/home/khanh/LOS201_Lab\]0;khanh@KhanhHTSE201563:~/LOS201_Lab\]666;vte.shell.precmd!\[?2004h]0;khanh@KhanhHTSE201563: ~/LOS201_Lab[01;32mkhanh@KhanhHTSE201563[00m:[01;34m~/LOS201_Lab[00m$ [7mcd ~/LOS201_Lab[27m
+
+[7mecho "===== CHECK NEW ASSIGNMENT DIRECTORY ====="[27m
+
+[7mls -ld Assignment-02-Smart-Monitoring 2>/dev/null || true[27m
+
+[7mecho "===== CHECK SOURCE FILES ====="[27m
+
+[7mls -lh ~/embedded_asgn2/app/src/sensor_thread.c[27m
+[7mls -lh ~/embedded_asgn2/driver/sms_sensor_driver.c[27m
+
+[7mecho "===== CHECK GIT CHANGES ====="[27m
+
+[7mgit status --short[27m[A[A[A[A[A[A[A[A[A[A[A[A[A]0;khanh@KhanhHTSE201563: ~/LOS201_Lab[01;32mkhanh@KhanhHTSE201563[00m:[01;34m~/LOS201_Lab[00m$ cd ~/LOS201_Lab
+
+echo "===== CHECK NEW ASSIGNMENT DIRECTORY ====="
+
+ls -ld Assignment-02-Smart-Monitoring 2>/dev/null || true
+
+echo "===== CHECK SOURCE FILES ====="
+
+ls -lh ~/embedded_asgn2/app/src/sensor_thread.c
+ls -lh ~/embedded_asgn2/driver/sms_sensor_driver.c
+
+echo "===== CHECK GIT CHANGES ====="
+
+git status --short
+[?2004l]133;C\]666;vte.shell.preexec!\]133;C\]666;vte.shell.preexec!\===== CHECK NEW ASSIGNMENT DIRECTORY =====
+]133;C\]666;vte.shell.preexec!\drwxrwxr-x 8 khanh khanh 4096 Oct 20 18:07 [0m[01;34mAssignment-02-Smart-Monitoring[0m
+]133;C\]666;vte.shell.preexec!\===== CHECK SOURCE FILES =====
+]133;C\]666;vte.shell.preexec!\-rw-rw-r-- 1 khanh khanh 8.5K Oct 20 17:34 /home/khanh/embedded_asgn2/app/src/sensor_thread.c
+]133;C\]666;vte.shell.preexec!\-rw-rw-r-- 1 khanh khanh 5.4K Oct 20 00:51 /home/khanh/embedded_asgn2/driver/sms_sensor_driver.c
+]133;C\]666;vte.shell.preexec!\===== CHECK GIT CHANGES =====
+]133;C\]666;vte.shell.preexec!\[32mA[m  Assignment-02-Smart-Monitoring/.gitignore
+[32mA[m  Assignment-02-Smart-Monitoring/app/Makefile
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/alert_thread.h
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/circular_buffer.h
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/logger_thread.h
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/processor_thread.h
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/sensor_thread.h
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/sms_ipc.h
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/sms_types.h
+[32mA[m  Assignment-02-Smart-Monitoring/app/src/alert_thread.c
+[32mA[m  Assignment-02-Smart-Monitoring/app/src/circular_buffer.c
+[32mA[m  Assignment-02-Smart-Monitoring/app/src/logger_thread.c
+[32mA[m  Assignment-02-Smart-Monitoring/app/src/processor_thread.c
+[32mA[m  Assignment-02-Smart-Monitoring/app/src/sensor_thread.c
+[32mA[m  Assignment-02-Smart-Monitoring/app/src/sms_app.c
+[32mA[m  Assignment-02-Smart-Monitoring/app/tests/test_alert.c
+[32mA[m  Assignment-02-Smart-Monitoring/app/tests/test_logger.c
+[32mA[m  Assignment-02-Smart-Monitoring/app/tests/test_processor.c
+[32mA[m  Assignment-02-Smart-Monitoring/app/tests/test_sensor.c
+[32mA[m  Assignment-02-Smart-Monitoring/a[32mA[m  Assignment-02-Smart-Monitoring/.gitignore
+[32mA[m  Assignment-02-Smart-Monitoring/app/Makefile
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/alert_thread.h
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/circular_buffer.h
+[32mA[m  Assignment-02-Smart-Monitoring/app/include/logger_thread.h
+[32mA[m  Assignment-02-Smart-Monitori[32mA[m  Assignment-02-Smart-Monitoring/echo
+[32mA[m  Assignment-02-Smart-Monitoring/else
+[32mA[m  Assignment-02-Smart-Monitoring/fi
+[32mA[m  Assignment-02-Smart-Monitoring/grep
+[32mA[m  Assignment-02-Smart-Monitoring/logs/e11_final_summary.csv
+[32mA[m  Assignment-02-Smart-Monitoring/logs/gdb_session.txt
+[32mA[m  Assignment-02-Smart-Monitoring/logs/perf_sms.txt
+[32mA[m  Assignment-02-Smart-Monitoring/logs/qemu_deadline_test.txt
+[32mA[m  Assignment-02-Smart-Monitoring/logs/qemu_realtime_console.txt
+[32mA[m  Assignment-02-Smart-Monitoring/logs/strace_sms.txt
+[32mA[m  Assignment-02-Smart-Monitoring/logs/valgrind_sms.txt
+[32mA[m  Assignment-02-Smart-Monitoring/tests/test_ioctl.c
+[32mA[m  Assignment-02-Smart-Monitoring/tests/test_ioctl_arm
+[32mA[m  Assignment-02-Smart-Monitoring/then
+[31m??[m README.md.bak_20261020_012704
+[31m??[m "gn02 -maxdepth 3 -type f"
+]666;vte.shell.postexec=0\]7;file://KhanhHTSE201563/home/khanh/LOS201_Lab\]0;khanh@KhanhHTSE201563:~/LOS201_Lab\]666;vte.shell.precmd!\[?2004h]0;khanh@KhanhHTSE201563: ~/LOS201_Lab[01;32mkhanh@KhanhHTSE201563[00m:[01;34m~/LOS201_Lab[00m$ [7mcd ~/LOS201_Lab[27m
+
+[7mgit add asgn02/[27m
+
+[7mgit diff --cached --stat[27m
+
+[7mgit diff --cached --check[27m
+
+[7mgit commit -m "asgn02: update smart monitoring system and realtime tests"[27m
+
+[7mgit push origin main[27m[A[A[A[A[A[A[A[A[A[A]0;khanh@KhanhHTSE201563: ~/LOS201_Lab[01;32mkhanh@KhanhHTSE201563[00m:[01;34m~/LOS201_Lab[00m$ cd ~/LOS201_Lab
+
+git add asgn02/
+
+git diff --cached --stat
+
+git diff --cached --check
+
+git commit -m "asgn02: update smart monitoring system and realtime tests"
+
+git push origin main
+[?2004l]133;C\]666;vte.shell.preexec!\]133;C\]666;vte.shell.preexec!\]133;C\]666;vte.shell.preexec!\[?1h= Assignment-02-Smart-Monitoring/.gitignore                     |  14 [32m+[m[m
+ Assignment-02-Smart-Monitoring/app/Makefile                   |  18 [32m+[m[m
+ Assignment-02-Smart-Monitoring/app/include/alert_thread.h     |  34 [32m++[m[m
+ Assignment-02-Smart-Monitoring/app/include/circular_buffer.h  |  60 [32m+++[m[m
+ Assignment-02-Smart-Monitoring/app/include/logger_thread.h    |  29 [32m++[m[m
+ Assignment-02-Smart-Monitoring/app/include/processor_thread.h |  72 [32m++++[m[m
+ Assignment-02-Smart-Monitoring/app/include/sensor_thread.h    |  37 [32m++[m[m
+ Assignment-02-Smart-Monitoring/app/include/sms_ipc.h          |  39 [32m++[m[m
+ Assignment-02-Smart-Monitoring/app/include/sms_types.h        |  30 [32m++[m[m
+ Assignment-02-Smart-Monitoring/app/src/alert_thread.c         | 131 [32m++++++[m[m
+ Assignment-02-Smart-Monitoring/app/src/circular_buffer.c      | 221 [32m++++++++++[m[m
+ Assignment-02-Smart-Monitoring/app/src/logger_thread.c        | 232 [32m+++++++++++[m[m
+ Assignment-02-Smart-Monitoring/app/src/processor_thread.c     | 162 [32m++++++++[m[m
+ Assignment-02-Smart-Monitoring/app/src/sensor_thread.c        | 371 [32m+++++++++++++++++[m[m
+ Assignment-02-Smart-Monitoring/app/src/sms_app.c              | 279 [32m+++++++++++++[m[m
+ Assignment-02-Smart-Monitoring/app/tests/test_alert.c         | 101 [32m+++++[m[m
+ Assignment-02-Smart-Monitoring/app/tests/test_logger.c        | 134 [32m++++++[m[m
+ Assignment-02-Smart-Monitoring/app/tests/test_processor.c     | 133 [32m++++++[m[m
+ Assignment-02-Smart-Monitoring/app/tests/test_sensor.c        |  82 [32m++++[m[m
+ Assignment-02-Smart-Monitoring/awk                            |   0[m
+ Assignment-02-Smart-Monitoring/cat                            |   0[m
+ Assignment-02-Smart-Monitoring/done                           |   0[m
+ Assignment-02-Smart-Monitoring/driver/Makefile                |   8 [32m+[m[m
+ Assignment-02-Smart-Monitoring/driver/sms_sensor.h            |  21 [32m+[m[m
+ Assignment-02-Smart-Monitoring/driver/sms_sensor_driver.c     | 253 [32m++++++++++++[m[m
+ Assignment-02-Smart-Monitoring/driver/sms_sensor_driver.mod   |   2 [32m+[m[m
+ Assignment-02-Smart-Monitoring/echo                           |   0[m
+ Assignment-02-Smart-Monitoring/else                           |   0[m
+ Assignment-02-Smart-Monitoring/fi                             |   0[m
+ Assignment-02-Smart-Monitoring/grep                           |   0[m
+ Assignment-02-Smart-Monitoring/logs/e11_final_summary.csv     |  21 [32m+[m[m
+ Assignment-02-Smart-Monitoring/logs/gdb_session.txt           |  57 [32m+++[m[m
+ Assignment-02-Smart-Monitoring/logs/perf_sms.txt              | 971 [32m++++++++++++++++++++++++++++++++++++++++++++[m[m
+:[K[K Assignment-02-Smart-Monitoring/logs/qemu_deadline_test.txt    | 408 [32m+++++++++++++++++++[m[m
+:[K[K Assignment-02-Smart-Monitoring/logs/qemu_realtime_console.txt | 226 [32m+++++++++++[m[m
+:[K[K Assignment-02-Smart-Monitoring/logs/strace_sms.txt            |  36 [32m++[m[m
+:[K[K Assignment-02-Smart-Monitoring/logs/valgrind_sms.txt          |  15 [32m+[m[m
+:[K[K Assignment-02-Smart-Monitoring/tests/test_ioctl.c             |  38 [32m++[m[m
+:[K[K Assignment-02-Smart-Monitoring/tests/test_ioctl_arm           | Bin [31m0[m -> [32m490952[m bytes[m
+:[K[K Assignment-02-Smart-Monitoring/then                           |   0[m
+:[K[K 40 files changed, 4235 insertions(+)[m
+:[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K [KESCESC[K^J^J[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K
+Script done on 2026-10-20 18:26:04+07:00 [COMMAND_EXIT_CODE="0"]
+:[K[K Assignment-02-Smart-Monitoring/logs/qemu_realtime_console.txt | 226 [32m+++++++++++[m[m
+:[K[K Assignment-02-Smart-Monitoring/logs/strace_sms.txt            |  36 [32m++[m[m
+:[K[K Assignment-02-Smart-Monitoring/logs/valgrind_sms.txt          |  15 [32m+[m[m
+:[K[K Assignment-02-Smart-Monitoring/tests/test_ioctl.c             |  38 [32m++[m[m
+:[K[K Assignment-02-Smart-Monitoring/tests/test_ioctl_arm           | Bin [31m0[m -> [32m490952[m bytes[m
+:[K[K Assignment-02-Smart-Monitoring/then                           |   0[m
+:[K[K 40 files changed, 4235 insertions(+)[m
+:[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K [KESCESC[K^J^J[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K
+Script done on 2026-10-20 18:26:02+07:00 [COMMAND_EXIT_CODE="0"]
+++++++++++++++++++[m[m
+:[K[K Assignment-02-Smart-Monitoring/logs/qemu_realtime_console.txt | 226 [32m+++++++++++[m[m
+:[K[K Assignment-02-Smart-Monitoring/logs/strace_sms.txt            |  36 [32m++[m[m
+:[K[K Assignment-02-Smart-Monitoring/logs/valgrind_sms.txt          |  15 [32m+[m[m
+:[K[K Assignment-02-Smart-Monitoring/tests/test_ioctl.c             |  38 [32m++[m[m
+:[K[K Assignment-02-Smart-Monitoring/tests/test_ioctl_arm           | Bin [31m0[m -> [32m490952[m bytes[m
+:[K[K Assignment-02-Smart-Monitoring/then                           |   0[m
+:[K[K 40 files changed, 4235 insertions(+)[m
+:[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K [KESCESC[K^J^J[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K
+Script done on 2026-10-20 18:26:00+07:00 [COMMAND_EXIT_CODE="0"]

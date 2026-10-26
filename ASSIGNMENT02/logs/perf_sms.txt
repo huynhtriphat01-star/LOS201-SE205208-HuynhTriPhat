@@ -1,0 +1,971 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 50  of event 'cpu-clock:u'
+# Event count (approx.): 505050500
+#
+# Children      Self  Command      Shared Object     Symbol                                
+# ........  ........  ...........  ................  ......................................
+#
+    38.00%     0.00%  sms_app_x86  [unknown]         [.] 0x00007ffe6178a693
+            |
+            ---0x7ffe6178a693
+               |          
+               |--34.00%--sms_logger_thread
+               |          |          
+               |           --32.00%--append_record (inlined)
+               |                     |          
+               |                     |--12.00%--__tz_convert
+               |                     |          |          
+               |                     |           --10.00%--__tzfile_compute
+               |                     |                     |          
+               |                     |                     |--8.00%--__tzset_parse_tz
+               |                     |                     |          parse_offset
+               |                     |                     |          |          
+               |                     |                     |          |--6.00%--__isoc23_sscanf
+               |                     |                     |          |          |          
+               |                     |                     |          |          |--4.00%--__vfscanf_internal
+               |                     |                     |          |          |          
+               |                     |                     |          |           --2.00%--_IO_setb
+               |                     |                     |          |          
+               |                     |                     |           --2.00%--_IO_no_init
+               |                     |                     |          
+               |                     |                      --2.00%--parse_tzname
+               |                     |          
+               |                     |--12.00%--___snprintf_chk (inlined)
+               |                     |          |          
+               |                     |          |--10.00%--__vsnprintf_internal
+               |                     |          |          __printf_buffer_snprintf_done (inlined)
+               |                     |          |          |          
+               |                     |          |          |--4.00%--__strlen_avx2
+               |                     |          |          |          
+               |                     |          |          |--4.00%--_itoa_word
+               |                     |          |          |          
+               |                     |          |           --2.00%--__printf_buffer
+               |                     |          |          
+               |                     |           --2.00%--__printf_buffer
+               |                     |          
+               |                     |--4.00%--__strftime_l
+               |                     |          __strftime_internal
+               |                     |          
+               |                      --2.00%--_IO_new_file_xsputn (inlined)
+               |          
+               |--2.00%--__tz_convert
+               |          
+                --2.00%--__clock_gettime (inlined)
+
+    34.00%     4.00%  sms_app_x86  sms_app_x86       [.] sms_logger_thread
+            |          
+            |--30.00%--sms_logger_thread
+            |          append_record (inlined)
+            |          |          
+            |          |--12.00%--__tz_convert
+            |          |          |          
+            |          |           --10.00%--__tzfile_compute
+            |          |                     |          
+            |          |                     |--8.00%--__tzset_parse_tz
+            |          |                     |          parse_offset
+            |          |                     |          |          
+            |          |                     |          |--6.00%--__isoc23_sscanf
+            |          |                     |          |          |          
+            |          |                     |          |          |--4.00%--__vfscanf_internal
+            |          |                     |          |          |          
+            |          |                     |          |           --2.00%--_IO_setb
+            |          |                     |          |          
+            |          |                     |           --2.00%--_IO_no_init
+            |          |                     |          
+            |          |                      --2.00%--parse_tzname
+            |          |          
+            |          |--12.00%--___snprintf_chk (inlined)
+            |          |          |          
+            |          |          |--10.00%--__vsnprintf_internal
+            |          |          |          __printf_buffer_snprintf_done (inlined)
+            |          |          |          |          
+            |          |          |          |--4.00%--__strlen_avx2
+            |          |          |          |          
+            |          |          |          |--4.00%--_itoa_word
+            |          |          |          |          
+            |          |          |           --2.00%--__printf_buffer
+            |          |          |          
+            |          |           --2.00%--__printf_buffer
+            |          |          
+            |          |--4.00%--__strftime_l
+            |          |          __strftime_internal
+            |          |          
+            |           --2.00%--_IO_new_file_xsputn (inlined)
+            |          
+             --4.00%--0x7ffe6178a693
+                       sms_logger_thread
+                       |          
+                        --2.00%--append_record (inlined)
+
+    32.00%     0.00%  sms_app_x86  sms_app_x86       [.] append_record (inlined)
+            |
+            ---append_record (inlined)
+               |          
+               |--12.00%--__tz_convert
+               |          |          
+               |           --10.00%--__tzfile_compute
+               |                     |          
+               |                     |--8.00%--__tzset_parse_tz
+               |                     |          parse_offset
+               |                     |          |          
+               |                     |          |--6.00%--__isoc23_sscanf
+               |                     |          |          |          
+               |                     |          |          |--4.00%--__vfscanf_internal
+               |                     |          |          |          
+               |                     |          |           --2.00%--_IO_setb
+               |                     |          |          
+               |                     |           --2.00%--_IO_no_init
+               |                     |          
+               |                      --2.00%--parse_tzname
+               |          
+               |--12.00%--___snprintf_chk (inlined)
+               |          |          
+               |          |--10.00%--__vsnprintf_internal
+               |          |          __printf_buffer_snprintf_done (inlined)
+               |          |          |          
+               |          |          |--4.00%--__strlen_avx2
+               |          |          |          
+               |          |          |--4.00%--_itoa_word
+               |          |          |          
+               |          |           --2.00%--__printf_buffer
+               |          |          
+               |           --2.00%--__printf_buffer
+               |          
+               |--4.00%--__strftime_l
+               |          __strftime_internal
+               |          
+                --2.00%--_IO_new_file_xsputn (inlined)
+
+    30.00%     6.00%  sms_app_x86  libc.so.6         [.] __printf_buffer
+            |          
+            |--24.00%--__printf_buffer
+            |          |          
+            |          |--22.00%--__printf_fp_l_buffer
+            |          |          |          
+            |          |          |--20.00%--__printf_fp_buffer_1 (inlined)
+            |          |          |          |          
+            |          |          |          |--4.00%--hack_digit (inlined)
+            |          |          |          |          
+            |          |          |           --2.00%--__memmove_avx_unaligned_erms
+            |          |          |          
+            |          |           --2.00%--__memmove_avx_unaligned_erms
+            |          |          
+            |           --2.00%--__strlen_avx2
+            |          
+            |--4.00%--0x7ffe6178a693
+            |          sms_logger_thread
+            |          append_record (inlined)
+            |          ___snprintf_chk (inlined)
+            |          |          
+            |          |--2.00%--__vsnprintf_internal
+            |          |          __printf_buffer_snprintf_done (inlined)
+            |          |          __printf_buffer
+            |          |          
+            |           --2.00%--__printf_buffer
+            |          
+             --2.00%--0x404e34395810623a
+                       processor_sink
+                       ___snprintf_chk (inlined)
+                       __vsnprintf_internal
+                       __printf_buffer_snprintf_done (inlined)
+                       __printf_buffer
+
+    30.00%     0.00%  sms_app_x86  libc.so.6         [.] ___snprintf_chk (inlined)
+            |
+            ---___snprintf_chk (inlined)
+               |          
+               |--28.00%--__vsnprintf_internal
+               |          __printf_buffer_snprintf_done (inlined)
+               |          |          
+               |          |--20.00%--__printf_buffer
+               |          |          |          
+               |          |          |--14.00%--__printf_fp_l_buffer
+               |          |          |          |          
+               |          |          |          |--12.00%--__printf_fp_buffer_1 (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --2.00%--__memmove_avx_unaligned_erms
+               |          |          |          |          
+               |          |          |           --2.00%--__memmove_avx_unaligned_erms
+               |          |          |          
+               |          |           --2.00%--__strlen_avx2
+               |          |          
+               |          |--4.00%--__strlen_avx2
+               |          |          
+               |           --4.00%--_itoa_word
+               |          
+                --2.00%--__printf_buffer
+
+    28.00%     0.00%  sms_app_x86  libc.so.6         [.] __printf_buffer_snprintf_done (inlined)
+            |
+            ---__printf_buffer_snprintf_done (inlined)
+               |          
+               |--20.00%--__printf_buffer
+               |          |          
+               |          |--14.00%--__printf_fp_l_buffer
+               |          |          |          
+               |          |          |--12.00%--__printf_fp_buffer_1 (inlined)
+               |          |          |          |          
+               |          |          |           --2.00%--__memmove_avx_unaligned_erms
+               |          |          |          
+               |          |           --2.00%--__memmove_avx_unaligned_erms
+               |          |          
+               |           --2.00%--__strlen_avx2
+               |          
+               |--4.00%--__strlen_avx2
+               |          
+               |--2.00%--0x7480f7063067
+               |          
+                --2.00%--_itoa_word
+
+    28.00%     0.00%  sms_app_x86  libc.so.6         [.] __vsnprintf_internal
+            |
+            ---__vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               |          
+               |--20.00%--__printf_buffer
+               |          |          
+               |          |--14.00%--__printf_fp_l_buffer
+               |          |          |          
+               |          |          |--12.00%--__printf_fp_buffer_1 (inlined)
+               |          |          |          |          
+               |          |          |           --2.00%--__memmove_avx_unaligned_erms
+               |          |          |          
+               |          |           --2.00%--__memmove_avx_unaligned_erms
+               |          |          
+               |           --2.00%--__strlen_avx2
+               |          
+               |--4.00%--__strlen_avx2
+               |          
+                --4.00%--_itoa_word
+
+    22.00%     2.00%  sms_app_x86  sms_app_x86       [.] sms_alert_thread
+            |          
+            |--20.00%--sms_alert_thread
+            |          |          
+            |          |--14.00%--___fprintf_chk (inlined)
+            |          |          __vfprintf_internal
+            |          |          |          
+            |          |          |--8.00%--__printf_buffer
+            |          |          |          __printf_fp_l_buffer
+            |          |          |          __printf_fp_buffer_1 (inlined)
+            |          |          |          |          
+            |          |          |           --4.00%--hack_digit (inlined)
+            |          |          |          
+            |          |           --4.00%--__strchrnul_avx2
+            |          |          
+            |          |--4.00%--forward_log (inlined)
+            |          |          ___snprintf_chk (inlined)
+            |          |          __vsnprintf_internal
+            |          |          __printf_buffer_snprintf_done (inlined)
+            |          |          __printf_buffer
+            |          |          __printf_fp_l_buffer
+            |          |          __printf_fp_buffer_1 (inlined)
+            |          |          
+            |           --2.00%--___mq_timedreceive_time64 (inlined)
+            |                     __syscall_cancel_arch (inlined)
+            |          
+             --2.00%--0x3
+                       sms_alert_thread
+
+    22.00%     0.00%  sms_app_x86  libc.so.6         [.] __printf_fp_l_buffer
+            |
+            ---__printf_fp_l_buffer
+               |          
+               |--20.00%--__printf_fp_buffer_1 (inlined)
+               |          |          
+               |          |--4.00%--hack_digit (inlined)
+               |          |          
+               |           --2.00%--__memmove_avx_unaligned_erms
+               |          
+                --2.00%--__memmove_avx_unaligned_erms
+
+    20.00%     0.00%  sms_app_x86  libc.so.6         [.] __printf_fp_buffer_1 (inlined)
+            |
+            ---__printf_fp_buffer_1 (inlined)
+               |          
+               |--4.00%--hack_digit (inlined)
+               |          
+                --2.00%--__memmove_avx_unaligned_erms
+
+    16.00%    16.00%  sms_app_x86  libc.so.6         [.] __printf_fp_buffer_1.isra.0
+            |          
+            |--8.00%--0x3
+            |          sms_alert_thread
+            |          |          
+            |          |--4.00%--forward_log (inlined)
+            |          |          ___snprintf_chk (inlined)
+            |          |          __vsnprintf_internal
+            |          |          __printf_buffer_snprintf_done (inlined)
+            |          |          __printf_buffer
+            |          |          __printf_fp_l_buffer
+            |          |          __printf_fp_buffer_1 (inlined)
+            |          |          
+            |           --4.00%--___fprintf_chk (inlined)
+            |                     __vfprintf_internal
+            |                     __printf_buffer
+            |                     __printf_fp_l_buffer
+            |                     __printf_fp_buffer_1 (inlined)
+            |          
+            |--2.00%--0x4050d46a7ef9db20
+            |          processor_sink
+            |          ___snprintf_chk (inlined)
+            |          __vsnprintf_internal
+            |          __printf_buffer_snprintf_done (inlined)
+            |          __printf_buffer
+            |          __printf_fp_l_buffer
+            |          __printf_fp_buffer_1 (inlined)
+            |          
+            |--2.00%--0x404c07ef9db22cf0
+            |          processor_sink
+            |          ___snprintf_chk (inlined)
+            |          __vsnprintf_internal
+            |          __printf_buffer_snprintf_done (inlined)
+            |          __printf_buffer
+            |          __printf_fp_l_buffer
+            |          __printf_fp_buffer_1 (inlined)
+            |          
+            |--2.00%--0x404bbb645a1cabf0
+            |          processor_sink
+            |          ___snprintf_chk (inlined)
+            |          __vsnprintf_internal
+            |          __printf_buffer_snprintf_done (inlined)
+            |          __printf_buffer
+            |          __printf_fp_l_buffer
+            |          __printf_fp_buffer_1 (inlined)
+            |          
+             --2.00%--0x2
+                       sms_alert_thread
+                       ___fprintf_chk (inlined)
+                       __vfprintf_internal
+                       __printf_buffer
+                       __printf_fp_l_buffer
+                       __printf_fp_buffer_1 (inlined)
+                       hack_digit (inlined)
+
+    16.00%     0.00%  sms_app_x86  [unknown]         [.] 0x0000000000000003
+            |
+            ---0x3
+               sms_alert_thread
+               |          
+               |--8.00%--___fprintf_chk (inlined)
+               |          __vfprintf_internal
+               |          |          
+               |          |--4.00%--__printf_buffer
+               |          |          __printf_fp_l_buffer
+               |          |          __printf_fp_buffer_1 (inlined)
+               |          |          
+               |           --2.00%--__strchrnul_avx2
+               |          
+               |--4.00%--forward_log (inlined)
+               |          ___snprintf_chk (inlined)
+               |          __vsnprintf_internal
+               |          __printf_buffer_snprintf_done (inlined)
+               |          __printf_buffer
+               |          __printf_fp_l_buffer
+               |          __printf_fp_buffer_1 (inlined)
+               |          
+                --2.00%--___mq_timedreceive_time64 (inlined)
+                          __syscall_cancel_arch (inlined)
+
+    14.00%     0.00%  sms_app_x86  sms_app_x86       [.] processor_sink
+            |
+            ---processor_sink
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               |          
+               |--10.00%--__printf_fp_l_buffer
+               |          |          
+               |          |--8.00%--__printf_fp_buffer_1 (inlined)
+               |          |          |          
+               |          |           --2.00%--__memmove_avx_unaligned_erms
+               |          |          
+               |           --2.00%--__memmove_avx_unaligned_erms
+               |          
+                --2.00%--__strlen_avx2
+
+    14.00%    14.00%  sms_app_x86  libc.so.6         [.] __syscall_cancel_arch_end
+            |          
+            |--6.00%--0x100000000
+            |          sms_buffer_pop
+            |          ___pthread_cond_wait (inlined)
+            |          __pthread_cond_wait_common (inlined)
+            |          __futex_abstimed_wait_cancelable64 (inlined)
+            |          __futex_abstimed_wait_common (inlined)
+            |          __syscall_cancel_arch (inlined)
+            |          
+            |--2.00%--timed_send
+            |          ___mq_timedsend_time64 (inlined)
+            |          __syscall_cancel_arch (inlined)
+            |          
+            |--2.00%--0xda153b8
+            |          sms_sensor_thread
+            |          __clock_nanosleep (inlined)
+            |          __syscall_cancel_arch (inlined)
+            |          
+            |--2.00%--0x7ab6c4c
+            |          sms_sensor_thread
+            |          __clock_nanosleep (inlined)
+            |          __syscall_cancel_arch (inlined)
+            |          
+             --2.00%--0x3
+                       sms_alert_thread
+                       ___mq_timedreceive_time64 (inlined)
+                       __syscall_cancel_arch (inlined)
+
+    14.00%     4.00%  sms_app_x86  libc.so.6         [.] __tz_convert
+            |          
+            |--10.00%--__tz_convert
+            |          __tzfile_compute
+            |          |          
+            |          |--8.00%--__tzset_parse_tz
+            |          |          parse_offset
+            |          |          |          
+            |          |          |--6.00%--__isoc23_sscanf
+            |          |          |          |          
+            |          |          |          |--4.00%--__vfscanf_internal
+            |          |          |          |          
+            |          |          |           --2.00%--_IO_setb
+            |          |          |          
+            |          |           --2.00%--_IO_no_init
+            |          |          
+            |           --2.00%--parse_tzname
+            |          
+             --4.00%--0x7ffe6178a693
+                       |          
+                       |--2.00%--__tz_convert
+                       |          
+                        --2.00%--sms_logger_thread
+                                  append_record (inlined)
+                                  __tz_convert
+
+    14.00%     0.00%  sms_app_x86  libc.so.6         [.] ___fprintf_chk (inlined)
+            |
+            ---___fprintf_chk (inlined)
+               __vfprintf_internal
+               |          
+               |--8.00%--__printf_buffer
+               |          __printf_fp_l_buffer
+               |          __printf_fp_buffer_1 (inlined)
+               |          |          
+               |           --4.00%--hack_digit (inlined)
+               |          
+                --4.00%--__strchrnul_avx2
+
+    14.00%     2.00%  sms_app_x86  libc.so.6         [.] __vfprintf_internal
+            |          
+            |--12.00%--__vfprintf_internal
+            |          |          
+            |          |--8.00%--__printf_buffer
+            |          |          __printf_fp_l_buffer
+            |          |          __printf_fp_buffer_1 (inlined)
+            |          |          |          
+            |          |           --4.00%--hack_digit (inlined)
+            |          |          
+            |           --4.00%--__strchrnul_avx2
+            |          
+             --2.00%--0x3
+                       sms_alert_thread
+                       ___fprintf_chk (inlined)
+                       __vfprintf_internal
+
+    14.00%     2.00%  sms_app_x86  sms_app_x86       [.] sms_buffer_pop
+            |          
+            |--12.00%--sms_buffer_pop
+            |          ___pthread_cond_wait (inlined)
+            |          __pthread_cond_wait_common (inlined)
+            |          __futex_abstimed_wait_cancelable64 (inlined)
+            |          __futex_abstimed_wait_common (inlined)
+            |          |          
+            |          |--6.00%--__syscall_cancel_arch (inlined)
+            |          |          
+            |           --6.00%--__internal_syscall_cancel
+            |          
+             --2.00%--0x100005868
+                       sms_buffer_pop
+
+    14.00%     0.00%  sms_app_x86  libc.so.6         [.] __syscall_cancel_arch (inlined)
+            |
+            ---__syscall_cancel_arch (inlined)
+
+    12.00%     0.00%  sms_app_x86  [unknown]         [.] 0x0000000100000000
+            |
+            ---0x100000000
+               sms_buffer_pop
+               ___pthread_cond_wait (inlined)
+               __pthread_cond_wait_common (inlined)
+               __futex_abstimed_wait_cancelable64 (inlined)
+               __futex_abstimed_wait_common (inlined)
+               |          
+               |--6.00%--__syscall_cancel_arch (inlined)
+               |          
+                --6.00%--__internal_syscall_cancel
+
+    12.00%     0.00%  sms_app_x86  libc.so.6         [.] ___pthread_cond_wait (inlined)
+            |
+            ---___pthread_cond_wait (inlined)
+               __pthread_cond_wait_common (inlined)
+               __futex_abstimed_wait_cancelable64 (inlined)
+               __futex_abstimed_wait_common (inlined)
+               |          
+               |--6.00%--__syscall_cancel_arch (inlined)
+               |          
+                --6.00%--__internal_syscall_cancel
+
+    12.00%     0.00%  sms_app_x86  libc.so.6         [.] __pthread_cond_wait_common (inlined)
+            |
+            ---__pthread_cond_wait_common (inlined)
+               __futex_abstimed_wait_cancelable64 (inlined)
+               __futex_abstimed_wait_common (inlined)
+               |          
+               |--6.00%--__syscall_cancel_arch (inlined)
+               |          
+                --6.00%--__internal_syscall_cancel
+
+    12.00%     0.00%  sms_app_x86  libc.so.6         [.] __futex_abstimed_wait_cancelable64 (inlined)
+            |
+            ---__futex_abstimed_wait_cancelable64 (inlined)
+               __futex_abstimed_wait_common (inlined)
+               |          
+               |--6.00%--__syscall_cancel_arch (inlined)
+               |          
+                --6.00%--__internal_syscall_cancel
+
+    12.00%     0.00%  sms_app_x86  libc.so.6         [.] __futex_abstimed_wait_common (inlined)
+            |
+            ---__futex_abstimed_wait_common (inlined)
+               |          
+               |--6.00%--__syscall_cancel_arch (inlined)
+               |          
+                --6.00%--__internal_syscall_cancel
+
+    10.00%    10.00%  sms_app_x86  libc.so.6         [.] __internal_syscall_cancel
+            |          
+            |--6.00%--0x100000000
+            |          sms_buffer_pop
+            |          ___pthread_cond_wait (inlined)
+            |          __pthread_cond_wait_common (inlined)
+            |          __futex_abstimed_wait_cancelable64 (inlined)
+            |          __futex_abstimed_wait_common (inlined)
+            |          __internal_syscall_cancel
+            |          
+            |--2.00%--0x2f9b1b29
+            |          sms_sensor_thread
+            |          __clock_nanosleep (inlined)
+            |          __internal_syscall_cancel
+            |          
+             --2.00%--0x14c8ee44
+                       sms_sensor_thread
+                       __clock_nanosleep (inlined)
+                       __internal_syscall_cancel
+
+    10.00%     0.00%  sms_app_x86  libc.so.6         [.] __tzfile_compute
+            |
+            ---__tzfile_compute
+               |          
+               |--8.00%--__tzset_parse_tz
+               |          parse_offset
+               |          |          
+               |          |--6.00%--__isoc23_sscanf
+               |          |          |          
+               |          |          |--4.00%--__vfscanf_internal
+               |          |          |          
+               |          |           --2.00%--_IO_setb
+               |          |          
+               |           --2.00%--_IO_no_init
+               |          
+                --2.00%--parse_tzname
+
+    10.00%     0.00%  sms_app_x86  sms_app_x86       [.] sms_sensor_thread
+            |
+            ---sms_sensor_thread
+               |          
+               |--8.00%--__clock_nanosleep (inlined)
+               |          |          
+               |          |--4.00%--__syscall_cancel_arch (inlined)
+               |          |          
+               |           --4.00%--__internal_syscall_cancel
+               |          
+                --2.00%--0x7480f73699b0
+
+     8.00%     0.00%  sms_app_x86  libc.so.6         [.] __clock_nanosleep (inlined)
+            |
+            ---__clock_nanosleep (inlined)
+               |          
+               |--4.00%--__syscall_cancel_arch (inlined)
+               |          
+                --4.00%--__internal_syscall_cancel
+
+     8.00%     0.00%  sms_app_x86  libc.so.6         [.] __tzset_parse_tz
+            |
+            ---__tzset_parse_tz
+               parse_offset
+               |          
+               |--6.00%--__isoc23_sscanf
+               |          |          
+               |          |--4.00%--__vfscanf_internal
+               |          |          
+               |           --2.00%--_IO_setb
+               |          
+                --2.00%--_IO_no_init
+
+     8.00%     0.00%  sms_app_x86  libc.so.6         [.] parse_offset
+            |
+            ---parse_offset
+               |          
+               |--6.00%--__isoc23_sscanf
+               |          |          
+               |          |--4.00%--__vfscanf_internal
+               |          |          
+               |           --2.00%--_IO_setb
+               |          
+                --2.00%--_IO_no_init
+
+     6.00%     6.00%  sms_app_x86  libc.so.6         [.] __strlen_avx2
+            |          
+            |--4.00%--0x7ffe6178a693
+            |          sms_logger_thread
+            |          append_record (inlined)
+            |          ___snprintf_chk (inlined)
+            |          __vsnprintf_internal
+            |          __printf_buffer_snprintf_done (inlined)
+            |          __strlen_avx2
+            |          
+             --2.00%--0x404d3c083126e960
+                       processor_sink
+                       ___snprintf_chk (inlined)
+                       __vsnprintf_internal
+                       __printf_buffer_snprintf_done (inlined)
+                       __printf_buffer
+                       __strlen_avx2
+
+     6.00%     0.00%  sms_app_x86  libc.so.6         [.] __isoc23_sscanf
+            |
+            ---__isoc23_sscanf
+               |          
+               |--4.00%--__vfscanf_internal
+               |          
+                --2.00%--_IO_setb
+
+     4.00%     4.00%  sms_app_x86  libc.so.6         [.] __memmove_avx_unaligned_erms
+            |          
+            |--2.00%--0x404f0e5604189366
+            |          processor_sink
+            |          ___snprintf_chk (inlined)
+            |          __vsnprintf_internal
+            |          __printf_buffer_snprintf_done (inlined)
+            |          __printf_buffer
+            |          __printf_fp_l_buffer
+            |          __printf_fp_buffer_1 (inlined)
+            |          __memmove_avx_unaligned_erms
+            |          
+             --2.00%--0x404d43f7ced91672
+                       processor_sink
+                       ___snprintf_chk (inlined)
+                       __vsnprintf_internal
+                       __printf_buffer_snprintf_done (inlined)
+                       __printf_buffer
+                       __printf_fp_l_buffer
+                       __memmove_avx_unaligned_erms
+
+     4.00%     4.00%  sms_app_x86  libc.so.6         [.] __strchrnul_avx2
+            |          
+            |--2.00%--0x3
+            |          sms_alert_thread
+            |          ___fprintf_chk (inlined)
+            |          __vfprintf_internal
+            |          __strchrnul_avx2
+            |          
+             --2.00%--0x1
+                       sms_alert_thread
+                       ___fprintf_chk (inlined)
+                       __vfprintf_internal
+                       __strchrnul_avx2
+
+     4.00%     4.00%  sms_app_x86  libc.so.6         [.] __vfscanf_internal
+            |
+            ---0x7ffe6178a693
+               sms_logger_thread
+               append_record (inlined)
+               __tz_convert
+               __tzfile_compute
+               __tzset_parse_tz
+               parse_offset
+               __isoc23_sscanf
+               __vfscanf_internal
+
+     4.00%     4.00%  sms_app_x86  libc.so.6         [.] _itoa_word
+            |
+            ---0x7ffe6178a693
+               sms_logger_thread
+               append_record (inlined)
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               _itoa_word
+
+     4.00%     4.00%  sms_app_x86  libc.so.6         [.] __strftime_internal
+            |
+            ---0x7ffe6178a693
+               sms_logger_thread
+               append_record (inlined)
+               __strftime_l
+               __strftime_internal
+
+     4.00%     0.00%  sms_app_x86  libc.so.6         [.] __strftime_l
+            |
+            ---__strftime_l
+               __strftime_internal
+
+     4.00%     0.00%  sms_app_x86  [unknown]         [.] 0x0000000000000001
+            |
+            ---0x1
+               sms_alert_thread
+               ___fprintf_chk (inlined)
+               __vfprintf_internal
+               |          
+               |--2.00%--__strchrnul_avx2
+               |          
+                --2.00%--__printf_buffer
+                          __printf_fp_l_buffer
+                          __printf_fp_buffer_1 (inlined)
+                          hack_digit
+
+     4.00%     0.00%  sms_app_x86  sms_app_x86       [.] forward_log (inlined)
+            |
+            ---forward_log (inlined)
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1 (inlined)
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x0000000007ab6c4c
+            |
+            ---0x7ab6c4c
+               sms_sensor_thread
+               __clock_nanosleep (inlined)
+               __syscall_cancel_arch (inlined)
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x000000000da153b8
+            |
+            ---0xda153b8
+               sms_sensor_thread
+               __clock_nanosleep (inlined)
+               __syscall_cancel_arch (inlined)
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x0000000014c8ee44
+            |
+            ---0x14c8ee44
+               sms_sensor_thread
+               __clock_nanosleep (inlined)
+               __internal_syscall_cancel
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x000000002f9b1b29
+            |
+            ---0x2f9b1b29
+               sms_sensor_thread
+               __clock_nanosleep (inlined)
+               __internal_syscall_cancel
+
+     2.00%     2.00%  sms_app_x86  [vdso]            [.] 0x00000000000009b0
+            |
+            ---0x2578fded
+               sms_sensor_thread
+               0x7480f73699b0
+
+     2.00%     2.00%  sms_app_x86  libc.so.6         [.] _IO_setb
+            |
+            ---0x7ffe6178a693
+               sms_logger_thread
+               append_record (inlined)
+               __tz_convert
+               __tzfile_compute
+               __tzset_parse_tz
+               parse_offset
+               __isoc23_sscanf
+               _IO_setb
+
+     2.00%     2.00%  sms_app_x86  libc.so.6         [.] _IO_no_init
+            |
+            ---0x7ffe6178a693
+               sms_logger_thread
+               append_record (inlined)
+               __tz_convert
+               __tzfile_compute
+               __tzset_parse_tz
+               parse_offset
+               _IO_no_init
+
+     2.00%     2.00%  sms_app_x86  libc.so.6         [.] _IO_file_xsputn@@GLIBC_2.2.5
+            |
+            ---0x7ffe6178a693
+               sms_logger_thread
+               append_record (inlined)
+               _IO_new_file_xsputn (inlined)
+
+     2.00%     2.00%  sms_app_x86  libc.so.6         [.] clock_gettime@@GLIBC_2.17
+            |
+            ---0x7ffe6178a693
+               __clock_gettime (inlined)
+
+     2.00%     2.00%  sms_app_x86  libc.so.6         [.] hack_digit
+            |
+            ---0x1
+               sms_alert_thread
+               ___fprintf_chk (inlined)
+               __vfprintf_internal
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1 (inlined)
+               hack_digit
+
+     2.00%     2.00%  sms_app_x86  libc.so.6         [.] parse_tzname
+            |
+            ---0x7ffe6178a693
+               sms_logger_thread
+               append_record (inlined)
+               __tz_convert
+               __tzfile_compute
+               parse_tzname
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x000000002578fded
+            |
+            ---0x2578fded
+               sms_sensor_thread
+               0x7480f73699b0
+
+     2.00%     0.00%  sms_app_x86  [vdso]            [.] 0x00007480f73699b0
+            |
+            ---0x7480f73699b0
+
+     2.00%     0.00%  sms_app_x86  libc.so.6         [.] _IO_new_file_xsputn (inlined)
+            |
+            ---_IO_new_file_xsputn (inlined)
+
+     2.00%     0.00%  sms_app_x86  libc.so.6         [.] ___mq_timedreceive_time64 (inlined)
+            |
+            ---___mq_timedreceive_time64 (inlined)
+               __syscall_cancel_arch (inlined)
+
+     2.00%     0.00%  sms_app_x86  libc.so.6         [.] ___mq_timedsend_time64 (inlined)
+            |
+            ---___mq_timedsend_time64 (inlined)
+               __syscall_cancel_arch (inlined)
+
+     2.00%     0.00%  sms_app_x86  libc.so.6         [.] __clock_gettime (inlined)
+            |
+            ---__clock_gettime (inlined)
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x0000000000000002
+            |
+            ---0x2
+               sms_alert_thread
+               ___fprintf_chk (inlined)
+               __vfprintf_internal
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1 (inlined)
+               hack_digit (inlined)
+
+     2.00%     0.00%  sms_app_x86  libc.so.6         [.] hack_digit (inlined)
+            |
+            ---hack_digit (inlined)
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x404f0e5604189366
+            |
+            ---0x404f0e5604189366
+               processor_sink
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1 (inlined)
+               __memmove_avx_unaligned_erms
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x404bbb645a1cabf0
+            |
+            ---0x404bbb645a1cabf0
+               processor_sink
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1 (inlined)
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x404c07ef9db22cf0
+            |
+            ---0x404c07ef9db22cf0
+               processor_sink
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1 (inlined)
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x404d43f7ced91672
+            |
+            ---0x404d43f7ced91672
+               processor_sink
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_fp_l_buffer
+               __memmove_avx_unaligned_erms
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x4050d46a7ef9db20
+            |
+            ---0x4050d46a7ef9db20
+               processor_sink
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1 (inlined)
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x404d3c083126e960
+            |
+            ---0x404d3c083126e960
+               processor_sink
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __strlen_avx2
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x404e34395810623a
+            |
+            ---0x404e34395810623a
+               processor_sink
+               ___snprintf_chk (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+
+     2.00%     0.00%  sms_app_x86  sms_app_x86       [.] timed_send
+            |
+            ---timed_send
+               ___mq_timedsend_time64 (inlined)
+               __syscall_cancel_arch (inlined)
+
+     2.00%     0.00%  sms_app_x86  [unknown]         [.] 0x0000000100005868
+            |
+            ---0x100005868
+               sms_buffer_pop
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

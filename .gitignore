@@ -1,0 +1,23 @@
+# Linux kernel build artifacts
+*.o
+*.cmd
+*.mod
+*.mod.c
+*.symvers
+modules.order
+
+# Large/root filesystem
+rootfs/
+backups/
+
+# Archives
+*.zip
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Windows/macOS
+Thumbs.db
+.DS_Store
