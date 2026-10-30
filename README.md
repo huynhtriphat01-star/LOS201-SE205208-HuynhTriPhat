@@ -7,7 +7,7 @@
 ## Repository Structure
 
 - LAB02 - Device Driver and File System
-- LA02_20LESSON - Twenty independent LAB02 lessons
+- LAB02/exercises - Twenty independent LAB02 lessons
 - ASSIGNMENT01 - ioctl and Misc Device Driver
 - LAB03 - Debugging and Performance Analysis
 - ASSIGNMENT02 - Sensor Monitoring System

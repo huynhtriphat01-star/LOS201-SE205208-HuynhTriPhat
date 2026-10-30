@@ -5,6 +5,10 @@
 *.mod.c
 *.symvers
 modules.order
+*.ko
+
+# Locally built test programs
+ioctl_test
 
 # Large/root filesystem
 rootfs/
@@ -17,6 +21,9 @@ backups/
 *.tmp
 *.swp
 *~
+*.bak
+*.bak_*
+*.bak-*
 
 # Windows/macOS
 Thumbs.db
