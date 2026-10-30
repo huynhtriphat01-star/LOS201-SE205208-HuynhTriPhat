@@ -1,11 +1,11 @@
-# Exercise 04 - Limit Writes to 128 Bytes
+# Lesson 04 - Limit Writes to 128 Bytes
 
-## Requirement
+## Goal
 
 Limit a single `write()` system call to at most 128 bytes instead of accepting
 up to the full device-buffer capacity.
 
-## Implementation
+## Changes
 
 - Selects a 128-byte write limit for this exercise.
 - Copies at most that limit from userspace.
@@ -28,11 +28,10 @@ sudo ./test.sh
 The script performs exactly one 256-byte `write()` using Python's `os.write()`.
 It verifies that the syscall returns 128 and procfs reports `buffer_len: 128`.
 
-Expected final output:
+Test output:
 
 ```text
 PASS: a 256-byte write was limited to 128 bytes
 ```
 
-Runtime testing requires root privileges and matching kernel headers. The module
-build performed by `make` does not by itself validate device runtime behavior.
+Run this on Linux as root with kernel headers matching the running kernel.

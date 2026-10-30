@@ -1,6 +1,6 @@
-# Exercise 12 - Concurrency-safe open counter
+# Lesson 12 - Concurrency-safe open counter
 
-## Requirement
+## Goal
 
 Make the cumulative successful-open counter safe when several processes open the
 device at the same time. `atomic_long_inc()` updates the value only after per-file
@@ -26,7 +26,6 @@ sudo ./test.sh
 The script starts 64 concurrent processes that each open `/dev/lab2`, then verifies
 that `/proc/lab2_info` increased by exactly 64.
 
-Expected result: `PASS: open_count increased by 64`.
+Test output: `PASS: open_count increased by 64`.
 
-Runtime loading requires root privileges and a compatible kernel. Compilation and
-script syntax checks are not runtime execution.
+Run this on Linux as root with kernel headers matching the running kernel.

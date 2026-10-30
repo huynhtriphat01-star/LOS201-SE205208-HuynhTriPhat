@@ -1,11 +1,11 @@
-# Exercise 06 - Buffer Status Sysfs Attribute
+# Lesson 06 - Buffer Status Sysfs Attribute
 
-## Requirement
+## Goal
 
 Expose `/sys/class/lab2/lab2/status` as `EMPTY` when no bytes are stored and
 `DATA` when the device buffer contains data.
 
-## Implementation
+## Changes
 
 - Implements a read-only `status_show()` callback.
 - Derives the state directly from `buffer_len`, avoiding a duplicate flag that
@@ -28,11 +28,10 @@ sudo ./test.sh
 The script checks that a newly loaded module reports `EMPTY`, writes one byte,
 then verifies the value changes to `DATA`.
 
-Expected final output:
+Test output:
 
 ```text
 PASS: status changed from EMPTY to DATA
 ```
 
-Runtime testing requires root privileges and matching kernel headers. A module
-that builds successfully has not necessarily passed this runtime test.
+Run this on Linux as root with kernel headers matching the running kernel.

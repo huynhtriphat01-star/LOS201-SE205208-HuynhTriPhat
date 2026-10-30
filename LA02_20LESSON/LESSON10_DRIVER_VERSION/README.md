@@ -1,9 +1,9 @@
-# Exercise 10 - Driver version in sysfs
+# Lesson 10 - Driver version in sysfs
 
-## Requirement
+## Goal
 
 Add a read-only `version` attribute that returns `1.0` through the device's sysfs
-group. This directory is a complete, independently buildable LAB02 driver snapshot.
+group. This lesson can be built separately.
 
 ## Interface
 
@@ -31,7 +31,6 @@ sudo ./test.sh
 The script loads the module and asserts that reading the attribute returns exactly
 `1.0`.
 
-Expected result: `PASS: version=1.0`.
+Test output: `PASS: version=1.0`.
 
-Runtime loading requires root privileges and a kernel compatible with the built
-module. Compilation and script syntax checks do not count as a runtime pass.
+Run this on Linux as root with kernel headers matching the running kernel.

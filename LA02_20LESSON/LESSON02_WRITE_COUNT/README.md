@@ -1,11 +1,11 @@
-# Exercise 02 - Write Counter in Procfs
+# Lesson 02 - Write Counter in Procfs
 
-## Requirement
+## Goal
 
 Count successful `write()` operations on `/dev/lab2` and report the value as
 `write_count` in `/proc/lab2_info`.
 
-## Implementation
+## Changes
 
 - Stores the statistic in `atomic_long_t write_count`.
 - Increments it only after the buffer update succeeds.
@@ -29,11 +29,10 @@ sudo ./test.sh
 The script reads the initial procfs value, performs one successful write, then
 checks that the counter increased by exactly one.
 
-Expected final output:
+Test output:
 
 ```text
 PASS: write_count increased by 1
 ```
 
-Runtime testing requires root privileges and headers matching the running
-kernel. A successful build is not reported as a successful runtime test.
+Run this on Linux as root with kernel headers matching the running kernel.

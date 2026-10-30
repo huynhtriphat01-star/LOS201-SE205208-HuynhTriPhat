@@ -1,17 +1,17 @@
-# Exercise 07 - Total Bytes Read
+# Lesson 07 - Total Bytes Read
 
-## Requirement
+## Goal
 
 Maintain a cumulative `total_bytes_read` statistic containing the number of
 payload bytes successfully copied to userspace by `lab2_read()`.
 
-## Implementation
+## Changes
 
 - Stores the total in an `atomic_long_t` to avoid lost updates from concurrent
   readers.
 - Adds `to_copy` only after `copy_to_user()` succeeds.
 - Does not count EOF reads or failed copies.
-- Keeps the statistic internal in this exercise; Exercise 18 later exposes it
+- Keeps the statistic internal in this exercise; Lesson 18 later exposes it
   through `/proc/lab2_info`.
 
 ## Build and static verification
@@ -30,12 +30,12 @@ sudo ./test.sh
 The script writes and reads a known six-byte payload, proving that the
 successful read path used to update the statistic remains functional.
 
-Expected final output:
+Test output:
 
 ```text
 PASS: read returned the complete 6-byte payload
 ```
 
-The counter is not exported in Exercise 07, so its numeric runtime value cannot
+The counter is not exported in Lesson 07, so its numeric runtime value cannot
 be observed through the public interfaces yet. Do not interpret this smoke test
 as direct runtime verification of the internal counter.

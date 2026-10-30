@@ -1,6 +1,6 @@
-# LA02 - 20 Character Device Lessons
+# LAB02 - 20 lessons
 
-Twenty independent snapshots based on the `/dev/lab2` character driver.
+This folder contains 20 exercises for the `/dev/lab2` character driver.
 
 | No. | Exercise |
 |---:|---|

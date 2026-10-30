@@ -1,6 +1,6 @@
-# Exercise 13 - Protect reads with a mutex
+# Lesson 13 - Protect reads with a mutex
 
-## Requirement
+## Goal
 
 Protect the shared buffer and its length while reading. `lab2_read()` acquires
 `buffer_lock` interruptibly before examining the buffer, and all paths after a
@@ -25,7 +25,6 @@ The runtime script alternates two fixed-size payloads while repeatedly opening a
 reading the device. Every read must equal one complete payload; a torn or partial
 value fails the test.
 
-Expected result: `PASS: concurrent reads returned complete payloads`.
+Test output: `PASS: concurrent reads returned complete payloads`.
 
-Runtime loading requires root privileges and a kernel compatible with the module.
-Compilation and syntax checks alone are not a runtime pass.
+Run this on Linux as root with kernel headers matching the running kernel.

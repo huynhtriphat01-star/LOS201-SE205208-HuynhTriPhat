@@ -1,6 +1,6 @@
-# Exercise 14 - Append mode
+# Lesson 14 - Append mode
 
-## Requirement
+## Goal
 
 Change normal writes from replacement to append behavior. While holding
 `buffer_lock`, the driver chooses the current `buffer_len` as the destination
@@ -27,7 +27,6 @@ sudo ./test.sh
 The runtime script clears the device, writes `hello ` and `LAB02` separately, then
 verifies that a fresh read returns `hello LAB02`.
 
-Expected result: `PASS: separate writes were appended`.
+Test output: `PASS: separate writes were appended`.
 
-Runtime loading requires root privileges and a compatible kernel. Compilation and
-script syntax checks alone do not count as a runtime pass.
+Run this on Linux as root with kernel headers matching the running kernel.

@@ -1,6 +1,6 @@
-# Exercise 18 - Complete procfs statistics
+# Lesson 18 - Complete procfs statistics
 
-## Requirement
+## Goal
 
 Extend `/proc/lab2_info` into one diagnostic snapshot containing the device name,
 open/read/write counts, buffer length, cumulative byte totals, last successful
@@ -28,7 +28,6 @@ The runtime script writes and reads a known payload, checks every required procf
 key and its relevant values, then clears the buffer and confirms that status changes
 from `DATA` to `EMPTY`.
 
-Expected result: `PASS: procfs exposes complete statistics and status`.
+Test output: `PASS: procfs exposes complete statistics and status`.
 
-Runtime loading requires root privileges and a compatible kernel. Compilation and
-script syntax checks alone do not count as a runtime pass.
+Run this on Linux as root with kernel headers matching the running kernel.

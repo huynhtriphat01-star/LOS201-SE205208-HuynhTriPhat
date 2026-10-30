@@ -1,6 +1,6 @@
-# Exercise 19 - Read once per data generation
+# Lesson 19 - Read once per data generation
 
-## Requirement
+## Goal
 
 Give each open file descriptor read-once semantics. Per-file state records the data
 generation being read and whether that generation has been fully consumed. After a
@@ -29,7 +29,6 @@ The runtime test keeps one reader descriptor open, verifies EOF after consuming 
 first payload, writes a second payload through another descriptor, and confirms
 that the existing reader receives the new generation before returning EOF again.
 
-Expected result: `PASS: each data generation is readable once per open file`.
+Test output: `PASS: each data generation is readable once per open file`.
 
-Runtime loading requires root privileges, Python 3, and a compatible kernel.
-Compilation and syntax checks alone do not count as a runtime pass.
+Run this on Linux as root with Python 3 and matching kernel headers.

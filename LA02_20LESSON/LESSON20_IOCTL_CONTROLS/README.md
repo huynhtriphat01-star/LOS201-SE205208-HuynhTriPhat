@@ -1,6 +1,6 @@
-# Exercise 20 - ioctl buffer controls
+# Lesson 20 - ioctl buffer controls
 
-## Requirement
+## Goal
 
 Add a shared ioctl ABI and a user-space verification program:
 
@@ -10,7 +10,7 @@ Add a shared ioctl ABI and a user-space verification program:
 - Unknown commands return `ENOTTY`; interrupted lock acquisition returns
   `ERESTARTSYS`.
 
-The final snapshot retains all earlier LAB02 features and uses the same
+This version keeps the earlier LAB02 features and uses the same
 `lab2_ioctl.h` definitions in kernel and user space to prevent ABI drift.
 
 ## Build
@@ -33,7 +33,6 @@ The script loads the module and runs `ioctl_test`, which clears the device, writ
 known payload, verifies its reported length, clears it through ioctl, and verifies
 that the length becomes zero.
 
-Expected result: `PASS: GET_BUFFER_LEN and CLEAR_BUFFER work`.
+Test output: `PASS: GET_BUFFER_LEN and CLEAR_BUFFER work`.
 
-Runtime loading requires root privileges and a compatible kernel. A successful
-build does not imply that the privileged runtime test was executed.
+Run this on Linux as root with kernel headers matching the running kernel.

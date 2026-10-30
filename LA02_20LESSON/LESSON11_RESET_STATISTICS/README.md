@@ -1,6 +1,6 @@
-# Exercise 11 - Reset statistics through sysfs
+# Lesson 11 - Reset statistics through sysfs
 
-## Requirement
+## Goal
 
 Add a write-only `reset_stats` sysfs control. Writing the exact command `reset`
 clears the read/write counters and cumulative byte totals. Invalid commands return
@@ -31,7 +31,6 @@ The script first creates non-zero read/write counters, writes `reset`, and verif
 that the exposed counters return to zero. It also checks that an invalid command is
 rejected.
 
-Expected result: `PASS: statistics reset and invalid command rejected`.
+Test output: `PASS: statistics reset and invalid command rejected`.
 
-Runtime loading requires root privileges and a compatible kernel. Build and script
-syntax checks alone are not reported as runtime success.
+Run this on Linux as root with kernel headers matching the running kernel.

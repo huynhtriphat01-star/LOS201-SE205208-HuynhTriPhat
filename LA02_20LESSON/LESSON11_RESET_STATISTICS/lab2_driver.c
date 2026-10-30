@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0
-/* LAB02 character-device exercise snapshot. */
+/* LAB02 character device driver. */
 #include <linux/atomic.h>
 #include <linux/cdev.h>
 #include <linux/device.h>

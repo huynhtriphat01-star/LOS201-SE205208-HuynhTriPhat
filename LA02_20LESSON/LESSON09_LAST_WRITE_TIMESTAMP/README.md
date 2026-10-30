@@ -1,12 +1,11 @@
-# Exercise 09 - Last successful write timestamp
+# Lesson 09 - Last successful write timestamp
 
-## Requirement
+## Goal
 
 Record the wall-clock time of the last successful write and expose it through
-`/proc/lab2_info`. This directory is a complete, independently buildable LAB02
-driver snapshot.
+`/proc/lab2_info`. This lesson can be built separately.
 
-## Implementation
+## Changes
 
 - `ktime_get_real_seconds()` records Unix time only after `copy_from_user()` succeeds.
 - `/proc/lab2_info` reports the value as `last_write_timestamp`.
@@ -29,8 +28,6 @@ sudo ./test.sh
 The script loads the module, writes a payload, reads `/proc/lab2_info`, and checks
 that `last_write_timestamp` is a positive Unix timestamp.
 
-Expected result: `PASS: last_write_timestamp=<value>`.
+Test output: `PASS: last_write_timestamp=<value>`.
 
-Runtime loading requires root privileges and a kernel compatible with the built
-module. A successful build is not reported as a runtime pass unless this script is
-actually executed.
+Run this on Linux as root with kernel headers matching the running kernel.
