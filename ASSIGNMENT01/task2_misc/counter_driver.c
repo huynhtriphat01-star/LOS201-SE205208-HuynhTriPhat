@@ -14,7 +14,7 @@
 #define DEVICE_NAME "counter"
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("TODO: HoTen - MSSV");
+MODULE_AUTHOR("Huynh Tri Phat - SE205208");
 MODULE_DESCRIPTION("ASGN01: Atomic misc counter device");
 MODULE_VERSION("1.0");
 

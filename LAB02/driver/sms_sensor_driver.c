@@ -246,7 +246,7 @@ module_init(sms_init);
 module_exit(sms_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Student");
+MODULE_AUTHOR("Huynh Tri Phat - SE205208");
 MODULE_DESCRIPTION(
     "ASSIGNMENT-02 Simulated Sensor Driver"
 );
