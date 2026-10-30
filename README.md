@@ -6,8 +6,11 @@
 
 ## Repository Structure
 
-- LAB02 - Device Driver and File System
-- LAB02/exercises - Twenty independent LAB02 lessons
+- TASK_B1_SEEK_SUPPORT - Task B1 driver, documentation and test
+- TASK_B2_REVERSE_READ - Task B2 driver, documentation and test
+- TASK_B3_OVERWRITE_COUNTER - Task B3 driver, documentation and test
+- task_20_lesson - Twenty independent LAB02 lessons
+- LAB02 - Original LAB02 materials
 - ASSIGNMENT01 - ioctl and Misc Device Driver
 - LAB03 - Debugging and Performance Analysis
 - ASSIGNMENT02 - Sensor Monitoring System

@@ -24,7 +24,7 @@ static struct proc_dir_entry *lab2_proc;
 static char device_buffer[BUFFER_SIZE];
 static size_t buffer_len;
 static unsigned int open_count;
-static unsigned long overwrite_count;
+static bool reverse_read;
 static DEFINE_MUTEX(lab2_mutex);
 
 static int lab2_open(struct inode *inode, struct file *file)
@@ -57,10 +57,22 @@ static ssize_t lab2_read(struct file *file, char __user *user_buf,
         goto out;
     }
     to_copy = min(count, buffer_len - (size_t)*offset);
-    if (copy_to_user(user_buf, device_buffer + *offset, to_copy)) {
+    /* ===== TASK B2 START: reverse-read mode ===== */
+    if (reverse_read) {
+        size_t i;
+
+        for (i = 0; i < to_copy; i++) {
+            if (put_user(device_buffer[buffer_len - 1 - (*offset + i)],
+                         user_buf + i)) {
+                ret = -EFAULT;
+                goto out;
+            }
+        }
+    } else if (copy_to_user(user_buf, device_buffer + *offset, to_copy)) {
         ret = -EFAULT;
         goto out;
     }
+    /* ===== TASK B2 END ===== */
     *offset += to_copy;
     ret = to_copy;
 out:
@@ -72,39 +84,47 @@ static ssize_t lab2_write(struct file *file, const char __user *user_buf,
                           size_t count, loff_t *offset)
 {
     size_t to_copy = min(count, (size_t)BUFFER_SIZE);
-    bool had_data;
 
     if (mutex_lock_interruptible(&lab2_mutex))
         return -ERESTARTSYS;
-    had_data = buffer_len > 0;
     if (copy_from_user(device_buffer, user_buf, to_copy)) {
         mutex_unlock(&lab2_mutex);
         return -EFAULT;
     }
-    /* ===== TASK B3 START: count successful overwrites ===== */
-    if (had_data)
-        overwrite_count++;
-    /* ===== TASK B3 END ===== */
     buffer_len = to_copy;
     *offset = 0;
     mutex_unlock(&lab2_mutex);
     return to_copy;
 }
 
-/* ===== TASK B3 START: read-only overwrite_count sysfs attribute ===== */
-static ssize_t overwrite_count_show(struct device *dev,
-                                    struct device_attribute *attr, char *buf)
+/* ===== TASK B2 START: reverse_read sysfs attribute ===== */
+static ssize_t reverse_read_show(struct device *dev,
+                                 struct device_attribute *attr, char *buf)
 {
-    unsigned long value;
+    bool enabled;
 
     mutex_lock(&lab2_mutex);
-    value = overwrite_count;
+    enabled = reverse_read;
     mutex_unlock(&lab2_mutex);
-    return sysfs_emit(buf, "%lu\n", value);
+    return sysfs_emit(buf, "%u\n", enabled);
 }
 
-static DEVICE_ATTR_RO(overwrite_count);
-/* ===== TASK B3 END ===== */
+static ssize_t reverse_read_store(struct device *dev,
+                                  struct device_attribute *attr,
+                                  const char *buf, size_t count)
+{
+    unsigned int value;
+
+    if (kstrtouint(buf, 0, &value) || value > 1)
+        return -EINVAL;
+    mutex_lock(&lab2_mutex);
+    reverse_read = value;
+    mutex_unlock(&lab2_mutex);
+    return count;
+}
+
+static DEVICE_ATTR_RW(reverse_read);
+/* ===== TASK B2 END ===== */
 
 static const struct file_operations lab2_fops = {
     .owner = THIS_MODULE,
@@ -112,7 +132,6 @@ static const struct file_operations lab2_fops = {
     .release = lab2_release,
     .read = lab2_read,
     .write = lab2_write,
-    .llseek = no_llseek,
 };
 
 static int lab2_proc_show(struct seq_file *m, void *v)
@@ -122,7 +141,6 @@ static int lab2_proc_show(struct seq_file *m, void *v)
     seq_printf(m, "Major         : %d\n", LAB2_MAJOR);
     seq_printf(m, "Open count    : %u\n", open_count);
     seq_printf(m, "Buffer length : %zu\n", buffer_len);
-    seq_printf(m, "Overwrites    : %lu\n", overwrite_count); /* TASK B3 */
     mutex_unlock(&lab2_mutex);
     return 0;
 }
@@ -160,7 +178,7 @@ static int __init lab2_init(void)
         ret = PTR_ERR(lab2_device);
         goto destroy_class;
     }
-    ret = device_create_file(lab2_device, &dev_attr_overwrite_count); /* B3 */
+    ret = device_create_file(lab2_device, &dev_attr_reverse_read); /* TASK B2 */
     if (ret)
         goto destroy_device;
     lab2_proc = proc_create("lab2_info", 0444, NULL, &lab2_proc_ops);
@@ -172,7 +190,7 @@ static int __init lab2_init(void)
     return 0;
 
 remove_attribute:
-    device_remove_file(lab2_device, &dev_attr_overwrite_count);
+    device_remove_file(lab2_device, &dev_attr_reverse_read);
 destroy_device:
     device_destroy(lab2_class, lab2_dev);
 destroy_class:
@@ -187,7 +205,7 @@ unregister_region:
 static void __exit lab2_exit(void)
 {
     proc_remove(lab2_proc);
-    device_remove_file(lab2_device, &dev_attr_overwrite_count);
+    device_remove_file(lab2_device, &dev_attr_reverse_read);
     device_destroy(lab2_class, lab2_dev);
     class_destroy(lab2_class);
     cdev_del(&lab2_cdev);
@@ -200,4 +218,4 @@ module_exit(lab2_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Huynh Tri Phat");
-MODULE_DESCRIPTION("LAB02 Task B3 - overwrite counter");
+MODULE_DESCRIPTION("LAB02 Task B2 - reverse-read mode");
