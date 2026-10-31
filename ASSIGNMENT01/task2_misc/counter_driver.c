@@ -161,7 +161,10 @@ static const struct file_operations counter_fops = {
     .llseek = no_llseek,
 };
 
-/* Linux misc subsystem uses major 10. */
+/* Linux misc subsystem uses major 10. 
+*The kernel automatically assigns the minor number.
+*The driver creates the device /dev/counter.*/
+
 static struct miscdevice counter_miscdev = {
     .minor = MISC_DYNAMIC_MINOR,
     .name  = DEVICE_NAME,
