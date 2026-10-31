@@ -19,7 +19,7 @@ MODULE_DESCRIPTION("ASGN01: Atomic misc counter device");
 MODULE_VERSION("1.0");
 
 /* Data layer: atomic state and statistics. */
-static atomic_t counter = ATOMIC_INIT(0);
+static atomic_t counter = ATOMIC_INIT(0); /*Atomic counter storage&&safety statistics*/
 static atomic_t total_reads = ATOMIC_INIT(0);
 static atomic_t total_writes = ATOMIC_INIT(0);
 
@@ -37,7 +37,7 @@ static struct proc_dir_entry *counter_proc;
  * Purpose: return current counter then increment it.
  * Return: bytes read, 0 at EOF, or negative errno.
  */
-static ssize_t counter_read(struct file *file,
+static ssize_t counter_read(struct file *file, /*Read returns a value, then increments the counter.*/
                             char __user *buf,
                             size_t count, loff_t *ppos)
 {
@@ -79,7 +79,7 @@ static ssize_t counter_read(struct file *file,
  * Purpose: parse non-negative ASCII integer and set counter.
  * Return: input bytes accepted or -EINVAL / -EFAULT.
  */
-static ssize_t counter_write(struct file *file,
+static ssize_t counter_write(struct file *file, /*Write sets a new value*/
                              const char __user *buf,
                              size_t count, loff_t *ppos)
 {
@@ -120,7 +120,7 @@ static ssize_t counter_write(struct file *file,
  * Purpose: expose current counter and operation statistics.
  * Return: 0.
  */
-static int counter_proc_show(struct seq_file *m, void *v)
+static int counter_proc_show(struct seq_file *m, void *v) /*Procfs displays read and write statistics.*/
 {
     mutex_lock(&counter_lock);
 
