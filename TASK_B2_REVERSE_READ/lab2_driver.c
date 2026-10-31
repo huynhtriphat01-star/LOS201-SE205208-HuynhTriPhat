@@ -52,15 +52,17 @@ static ssize_t lab2_read(struct file *file, char __user *user_buf,
 
     if (mutex_lock_interruptible(&lab2_mutex))
         return -ERESTARTSYS;
+    /* Đã đọc hết dữ liệu thì trả 0 để cat kết thúc bình thường. */
     if (*offset >= buffer_len) {
         ret = 0;
         goto out;
     }
     to_copy = min(count, buffer_len - (size_t)*offset);
-    /* ===== TASK B2 START: reverse-read mode ===== */
+    /* ===== BẮT ĐẦU B2: chọn chiều đọc dữ liệu ===== */
     if (reverse_read) {
         size_t i;
 
+        /* Đọc từ cuối về đầu nhưng không thay đổi device_buffer. */
         for (i = 0; i < to_copy; i++) {
             if (put_user(device_buffer[buffer_len - 1 - (*offset + i)],
                          user_buf + i)) {
@@ -68,11 +70,13 @@ static ssize_t lab2_read(struct file *file, char __user *user_buf,
                 goto out;
             }
         }
+    /* reverse_read = 0: sao chép dữ liệu theo thứ tự bình thường. */
     } else if (copy_to_user(user_buf, device_buffer + *offset, to_copy)) {
         ret = -EFAULT;
         goto out;
     }
-    /* ===== TASK B2 END ===== */
+    /* ===== KẾT THÚC PHẦN ĐỌC NGƯỢC B2 ===== */
+    /* Offset vẫn tăng nên lần đọc tiếp theo tiếp tục đúng vị trí. */
     *offset += to_copy;
     ret = to_copy;
 out:
@@ -97,12 +101,13 @@ static ssize_t lab2_write(struct file *file, const char __user *user_buf,
     return to_copy;
 }
 
-/* ===== TASK B2 START: reverse_read sysfs attribute ===== */
+/* ===== BẮT ĐẦU B2: thuộc tính sysfs reverse_read ===== */
 static ssize_t reverse_read_show(struct device *dev,
                                  struct device_attribute *attr, char *buf)
 {
     bool enabled;
 
+    /* Đọc trạng thái hiện tại để hiển thị qua sysfs. */
     mutex_lock(&lab2_mutex);
     enabled = reverse_read;
     mutex_unlock(&lab2_mutex);
@@ -115,6 +120,7 @@ static ssize_t reverse_read_store(struct device *dev,
 {
     unsigned int value;
 
+    /* Chỉ chấp nhận 0 (đọc xuôi) hoặc 1 (đọc ngược). */
     if (kstrtouint(buf, 0, &value) || value > 1)
         return -EINVAL;
     mutex_lock(&lab2_mutex);
@@ -123,8 +129,9 @@ static ssize_t reverse_read_store(struct device *dev,
     return count;
 }
 
+/* Tạo thuộc tính sysfs có quyền đọc và ghi. */
 static DEVICE_ATTR_RW(reverse_read);
-/* ===== TASK B2 END ===== */
+/* ===== KẾT THÚC B2 ===== */
 
 static const struct file_operations lab2_fops = {
     .owner = THIS_MODULE,

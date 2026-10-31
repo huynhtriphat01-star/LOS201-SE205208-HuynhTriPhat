@@ -85,38 +85,45 @@ static ssize_t lab2_write(struct file *file, const char __user *user_buf,
     return to_copy;
 }
 
-/* ===== TASK B1 START: bounded seek support ===== */
+/* ===== BẮT ĐẦU B1: di chuyển vị trí đọc trong vùng dữ liệu hợp lệ ===== */
 static loff_t lab2_llseek(struct file *file, loff_t offset, int whence)
 {
     loff_t base;
     loff_t new_pos;
 
+    /* Khóa mutex vì SEEK_END sử dụng buffer_len là biến dùng chung. */
     if (mutex_lock_interruptible(&lab2_mutex))
         return -ERESTARTSYS;
     switch (whence) {
     case SEEK_SET:
+        /* SEEK_SET: tính offset từ đầu dữ liệu. */
         base = 0;
         break;
     case SEEK_CUR:
+        /* SEEK_CUR: tính offset từ vị trí đọc hiện tại. */
         base = file->f_pos;
         break;
     case SEEK_END:
+        /* SEEK_END: tính offset từ cuối dữ liệu thực tế. */
         base = buffer_len;
         break;
     default:
+        /* Từ chối kiểu seek không được đề bài hỗ trợ. */
         mutex_unlock(&lab2_mutex);
         return -EINVAL;
     }
+    /* Vị trí mới phải nằm trong đoạn từ 0 đến buffer_len. */
     if (check_add_overflow(base, offset, &new_pos) ||
         new_pos < 0 || new_pos > buffer_len) {
         mutex_unlock(&lab2_mutex);
         return -EINVAL;
     }
+    /* Chỉ cập nhật f_pos sau khi đã kiểm tra hợp lệ. */
     file->f_pos = new_pos;
     mutex_unlock(&lab2_mutex);
     return new_pos;
 }
-/* ===== TASK B1 END ===== */
+/* ===== KẾT THÚC B1 ===== */
 
 static const struct file_operations lab2_fops = {
     .owner = THIS_MODULE,
@@ -124,7 +131,8 @@ static const struct file_operations lab2_fops = {
     .release = lab2_release,
     .read = lab2_read,
     .write = lab2_write,
-    .llseek = lab2_llseek, /* TASK B1 */
+    /* Đăng ký hàm seek của B1 vào bảng thao tác của driver. */
+    .llseek = lab2_llseek,
 };
 
 static int lab2_proc_show(struct seq_file *m, void *v)

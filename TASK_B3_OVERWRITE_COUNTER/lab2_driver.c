@@ -76,22 +76,24 @@ static ssize_t lab2_write(struct file *file, const char __user *user_buf,
 
     if (mutex_lock_interruptible(&lab2_mutex))
         return -ERESTARTSYS;
+    /* Ghi nhớ buffer có dữ liệu hay không ngay trước lần ghi. */
     had_data = buffer_len > 0;
     if (copy_from_user(device_buffer, user_buf, to_copy)) {
         mutex_unlock(&lab2_mutex);
         return -EFAULT;
     }
-    /* ===== TASK B3 START: count successful overwrites ===== */
+    /* ===== BẮT ĐẦU B3: đếm lần ghi đè thành công ===== */
+    /* Chỉ tăng khi lần ghi thành công và buffer trước đó không rỗng. */
     if (had_data)
         overwrite_count++;
-    /* ===== TASK B3 END ===== */
+    /* ===== KẾT THÚC PHẦN ĐẾM B3 ===== */
     buffer_len = to_copy;
     *offset = 0;
     mutex_unlock(&lab2_mutex);
     return to_copy;
 }
 
-/* ===== TASK B3 START: read-only overwrite_count sysfs attribute ===== */
+/* ===== BẮT ĐẦU B3: xuất bộ đếm qua sysfs chỉ đọc ===== */
 static ssize_t overwrite_count_show(struct device *dev,
                                     struct device_attribute *attr, char *buf)
 {
@@ -103,8 +105,9 @@ static ssize_t overwrite_count_show(struct device *dev,
     return sysfs_emit(buf, "%lu\n", value);
 }
 
+/* Người dùng chỉ được xem, không được tự sửa bộ đếm. */
 static DEVICE_ATTR_RO(overwrite_count);
-/* ===== TASK B3 END ===== */
+/* ===== KẾT THÚC PHẦN SYSFS B3 ===== */
 
 static const struct file_operations lab2_fops = {
     .owner = THIS_MODULE,
@@ -121,7 +124,8 @@ static int lab2_proc_show(struct seq_file *m, void *v)
     seq_printf(m, "Major         : %d\n", LAB2_MAJOR);
     seq_printf(m, "Open count    : %u\n", open_count);
     seq_printf(m, "Buffer length : %zu\n", buffer_len);
-    seq_printf(m, "Overwrites    : %lu\n", overwrite_count); /* TASK B3 */
+    /* Hiển thị cùng bộ đếm trong /proc/lab2_info. */
+    seq_printf(m, "Overwrites    : %lu\n", overwrite_count);
     mutex_unlock(&lab2_mutex);
     return 0;
 }
