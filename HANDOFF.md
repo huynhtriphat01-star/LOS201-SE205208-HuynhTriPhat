@@ -39,4 +39,4 @@ and Valgrind.
 
 - Upgrade milestone: `5ec603828751f21687fad9c5984d27a670c0582a`.
 - This handoff update is a separate documentation commit.
-- No remote push was performed.
+- Feature branch was pushed and opened as GitHub pull request #1.

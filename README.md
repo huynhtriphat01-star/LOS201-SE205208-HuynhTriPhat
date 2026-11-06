@@ -94,7 +94,10 @@ recorded for each new validation run. See
 .
 ├── LAB01/                 Embedded Linux boot documentation and QEMU launcher
 ├── LAB02/                 Historical LAB02 sensor-driver snapshot
-├── LA02_20LESSON/         Twenty incremental character-driver exercises
+├── TASK_20_LESSON/        Twenty incremental character-driver exercises
+├── TASK_B1_SEEK_SUPPORT/  llseek and explicit file-position exercise
+├── TASK_B2_REVERSE_READ/  reverse-read exercise
+├── TASK_B3_OVERWRITE_COUNTER/ overwrite-counter exercise
 ├── LAB03/                 Debugging, profiling, and latency experiments
 ├── ASSIGNMENT01/          ioctl driver and misc device driver
 ├── ASSIGNMENT02/          Sensor Monitoring System driver, app, tests, logs
@@ -104,8 +107,8 @@ recorded for each new validation run. See
 └── README.md              Portfolio landing page
 ```
 
-The historical name `LA02_20LESSON` is retained to avoid breaking links and
-Git history. `LAB02` overlaps with part of `ASSIGNMENT02`; both remain until a
+`TASK_20_LESSON` contains the incremental driver series. `LAB02` overlaps with
+part of `ASSIGNMENT02`; both remain until a
 provenance-safe consolidation decision is made.
 
 ---
@@ -116,7 +119,7 @@ provenance-safe consolidation decision is made.
 |---|---|---|---|
 | [LAB01](LAB01/README.md) | kernel, U-Boot, DTB, BusyBox, initramfs, QEMU | documented scaffold | BLOCKED: build and boot tools absent |
 | [LAB02](LAB02/README.md) | character drivers and filesystem scope | partial historical snapshot | NOT RUN |
-| [20 lessons](LA02_20LESSON/README.md) | read/write, procfs, sysfs, mutex, EOF, ioctl | 20 exercises present | NOT RUN against a kernel |
+| [20 lessons](TASK_20_LESSON/README.md) | read/write, procfs, sysfs, mutex, EOF, ioctl | 20 exercises present | NOT RUN against a kernel |
 | [LAB03](LAB03/README.md) | GDB, Valgrind, strace, perf, cyclictest | source and historical logs present | historical evidence only |
 | [ASSIGNMENT01](ASSIGNMENT01/README.md) | ioctl ABI and misc device | source present | BLOCKED: ARM/kernel toolchain absent |
 | [ASSIGNMENT02](ASSIGNMENT02/README.md) | driver, threads, circular buffer, IPC, logging | source and unit tests present | BLOCKED: Linux/GCC/Make absent |
@@ -209,31 +212,31 @@ Browse: [`LAB02/`](LAB02/)
 
 ## Twenty incremental driver lessons
 
-`LA02_20LESSON` separates driver concepts into small exercises. Each lesson
+`TASK_20_LESSON` separates driver concepts into small exercises. Each lesson
 contains a `Makefile`, driver source, README, and privileged guest test script.
 
 | Lesson | Topic | Directory |
 |---:|---|---|
-| 01 | Count successful reads | [`LESSON01_READ_COUNT`](LA02_20LESSON/LESSON01_READ_COUNT/) |
-| 02 | Count successful writes | [`LESSON02_WRITE_COUNT`](LA02_20LESSON/LESSON02_WRITE_COUNT/) |
-| 03 | Clear the device buffer | [`LESSON03_CLEAR_BUFFER`](LA02_20LESSON/LESSON03_CLEAR_BUFFER/) |
-| 04 | Limit writes to 128 bytes | [`LESSON04_WRITE_LIMIT_128`](LA02_20LESSON/LESSON04_WRITE_LIMIT_128/) |
-| 05 | Expose buffer size | [`LESSON05_BUFFER_SIZE`](LA02_20LESSON/LESSON05_BUFFER_SIZE/) |
-| 06 | Expose buffer status | [`LESSON06_BUFFER_STATUS`](LA02_20LESSON/LESSON06_BUFFER_STATUS/) |
-| 07 | Count total bytes read | [`LESSON07_TOTAL_BYTES_READ`](LA02_20LESSON/LESSON07_TOTAL_BYTES_READ/) |
-| 08 | Count total bytes written | [`LESSON08_TOTAL_BYTES_WRITTEN`](LA02_20LESSON/LESSON08_TOTAL_BYTES_WRITTEN/) |
-| 09 | Record last-write time | [`LESSON09_LAST_WRITE_TIMESTAMP`](LA02_20LESSON/LESSON09_LAST_WRITE_TIMESTAMP/) |
-| 10 | Expose driver version | [`LESSON10_DRIVER_VERSION`](LA02_20LESSON/LESSON10_DRIVER_VERSION/) |
-| 11 | Reset statistics | [`LESSON11_RESET_STATISTICS`](LA02_20LESSON/LESSON11_RESET_STATISTICS/) |
-| 12 | Count open handles safely | [`LESSON12_SAFE_OPEN_COUNT`](LA02_20LESSON/LESSON12_SAFE_OPEN_COUNT/) |
-| 13 | Protect reads with a mutex | [`LESSON13_READ_MUTEX`](LA02_20LESSON/LESSON13_READ_MUTEX/) |
-| 14 | Append instead of replace | [`LESSON14_APPEND_MODE`](LA02_20LESSON/LESSON14_APPEND_MODE/) |
-| 15 | Clear on newline command | [`LESSON15_CLEAR_NEWLINE`](LA02_20LESSON/LESSON15_CLEAR_NEWLINE/) |
-| 16 | Configure maximum buffer size | [`LESSON16_CONFIGURABLE_MAX_SIZE`](LA02_20LESSON/LESSON16_CONFIGURABLE_MAX_SIZE/) |
-| 17 | Report last-write size | [`LESSON17_LAST_WRITE_SIZE`](LA02_20LESSON/LESSON17_LAST_WRITE_SIZE/) |
-| 18 | Aggregate procfs statistics | [`LESSON18_FULL_PROC_STATS`](LA02_20LESSON/LESSON18_FULL_PROC_STATS/) |
-| 19 | Implement read-once EOF behavior | [`LESSON19_READ_ONCE`](LA02_20LESSON/LESSON19_READ_ONCE/) |
-| 20 | Control the driver through ioctl | [`LESSON20_IOCTL_CONTROLS`](LA02_20LESSON/LESSON20_IOCTL_CONTROLS/) |
+| 01 | Count successful reads | [`LESSON01_READ_COUNT`](TASK_20_LESSON/LESSON01_READ_COUNT/) |
+| 02 | Count successful writes | [`LESSON02_WRITE_COUNT`](TASK_20_LESSON/LESSON02_WRITE_COUNT/) |
+| 03 | Clear the device buffer | [`LESSON03_CLEAR_BUFFER`](TASK_20_LESSON/LESSON03_CLEAR_BUFFER/) |
+| 04 | Limit writes to 128 bytes | [`LESSON04_WRITE_LIMIT_128`](TASK_20_LESSON/LESSON04_WRITE_LIMIT_128/) |
+| 05 | Expose buffer size | [`LESSON05_BUFFER_SIZE`](TASK_20_LESSON/LESSON05_BUFFER_SIZE/) |
+| 06 | Expose buffer status | [`LESSON06_BUFFER_STATUS`](TASK_20_LESSON/LESSON06_BUFFER_STATUS/) |
+| 07 | Count total bytes read | [`LESSON07_TOTAL_BYTES_READ`](TASK_20_LESSON/LESSON07_TOTAL_BYTES_READ/) |
+| 08 | Count total bytes written | [`LESSON08_TOTAL_BYTES_WRITTEN`](TASK_20_LESSON/LESSON08_TOTAL_BYTES_WRITTEN/) |
+| 09 | Record last-write time | [`LESSON09_LAST_WRITE_TIMESTAMP`](TASK_20_LESSON/LESSON09_LAST_WRITE_TIMESTAMP/) |
+| 10 | Expose driver version | [`LESSON10_DRIVER_VERSION`](TASK_20_LESSON/LESSON10_DRIVER_VERSION/) |
+| 11 | Reset statistics | [`LESSON11_RESET_STATISTICS`](TASK_20_LESSON/LESSON11_RESET_STATISTICS/) |
+| 12 | Count open handles safely | [`LESSON12_SAFE_OPEN_COUNT`](TASK_20_LESSON/LESSON12_SAFE_OPEN_COUNT/) |
+| 13 | Protect reads with a mutex | [`LESSON13_READ_MUTEX`](TASK_20_LESSON/LESSON13_READ_MUTEX/) |
+| 14 | Append instead of replace | [`LESSON14_APPEND_MODE`](TASK_20_LESSON/LESSON14_APPEND_MODE/) |
+| 15 | Clear on newline command | [`LESSON15_CLEAR_NEWLINE`](TASK_20_LESSON/LESSON15_CLEAR_NEWLINE/) |
+| 16 | Configure maximum buffer size | [`LESSON16_CONFIGURABLE_MAX_SIZE`](TASK_20_LESSON/LESSON16_CONFIGURABLE_MAX_SIZE/) |
+| 17 | Report last-write size | [`LESSON17_LAST_WRITE_SIZE`](TASK_20_LESSON/LESSON17_LAST_WRITE_SIZE/) |
+| 18 | Aggregate procfs statistics | [`LESSON18_FULL_PROC_STATS`](TASK_20_LESSON/LESSON18_FULL_PROC_STATS/) |
+| 19 | Implement read-once EOF behavior | [`LESSON19_READ_ONCE`](TASK_20_LESSON/LESSON19_READ_ONCE/) |
+| 20 | Control the driver through ioctl | [`LESSON20_IOCTL_CONTROLS`](TASK_20_LESSON/LESSON20_IOCTL_CONTROLS/) |
 
 ### Safety note
 
@@ -249,7 +252,7 @@ training modules into an arbitrary runner kernel.
 These exercises were not copied from the comparison repository. They require
 an authoritative syllabus or independently reviewed specification.
 
-Browse: [`LA02_20LESSON/`](LA02_20LESSON/)
+Browse: [`TASK_20_LESSON/`](TASK_20_LESSON/)
 
 ---
 

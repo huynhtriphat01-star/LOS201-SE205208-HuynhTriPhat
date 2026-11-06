@@ -12,7 +12,7 @@
 | Medium | lessons | scripts load modules with `sudo` | keep out of CI; require isolated guest | manual guest-only run |
 | Medium | all logs | many lack source/tool metadata | add evidence manifest format | reviewer reproduces result |
 | Low | backups | committed `.bak*` files create ambiguity | archive after ownership review | canonical source documented |
-| Low | naming | `LA02_20LESSON` typo retained | avoid mass rename; document route | all links pass |
+| Low | naming | lesson directory was renamed to `TASK_20_LESSON` | keep links synchronized | all links pass |
 
 No tracked evidence was deleted. Deletion would require a provenance decision
 and a recoverable archive plan.

@@ -2,7 +2,7 @@
 
 This directory currently holds a historical sensor-driver snapshot and evidence
 that overlaps `ASSIGNMENT02`. The incremental character-driver curriculum is
-under [`../LA02_20LESSON`](../LA02_20LESSON/README.md).
+under [`../TASK_20_LESSON`](../TASK_20_LESSON/README.md).
 
 Covered there: module/Kbuild basics, read/write counts, buffer limits, procfs,
 sysfs, mutexes, offsets, EOF, and ioctl. MTD/JFFS2 evidence exists only in the

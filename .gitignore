@@ -7,6 +7,10 @@
 modules.order
 Module.symvers
 .tmp_versions/
+*.ko
+
+# Locally built test programs
+ioctl_test
 
 # Large/root filesystem
 rootfs/
@@ -17,7 +21,7 @@ backups/
 
 # New generated userspace outputs
 ASSIGNMENT02/app/bin/
-LA02_20LESSON/*/ioctl_test
+TASK_20_LESSON/*/ioctl_test
 
 # New profiling output
 perf.data
@@ -27,6 +31,9 @@ perf.data.old
 *.tmp
 *.swp
 *~
+*.bak
+*.bak_*
+*.bak-*
 
 # Windows/macOS
 Thumbs.db
