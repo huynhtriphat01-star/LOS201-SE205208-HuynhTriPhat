@@ -174,7 +174,7 @@ static long asgn1_ioctl(struct file *file,
     struct asgn1_stats stats;
     int new_mode;
     char version[ASGN1_VERSION_SIZE] =
-        "asgn1_driver v1.0 - MSSV";
+        "asgn1_driver v1.0 - SE205208";
 
     switch (cmd) {
 

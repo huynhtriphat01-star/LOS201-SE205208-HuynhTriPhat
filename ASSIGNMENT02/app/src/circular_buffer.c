@@ -2,7 +2,7 @@
  * File: circular_buffer.c
  * Purpose: Thread-safe circular buffer for sensor data
  * Assignment: ASSIGNMENT-02
- * Author: Dien ten va MSSV cua ban
+ * Author: Huynh Tri Phat - SE205208
  * Date: 2026-10-20
  */
 

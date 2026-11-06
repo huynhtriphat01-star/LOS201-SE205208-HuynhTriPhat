@@ -5,6 +5,8 @@
 *.mod.c
 *.symvers
 modules.order
+Module.symvers
+.tmp_versions/
 *.ko
 
 # Locally built test programs
@@ -16,6 +18,14 @@ backups/
 
 # Archives
 *.zip
+
+# New generated userspace outputs
+ASSIGNMENT02/app/bin/
+TASK_20_LESSON/*/ioctl_test
+
+# New profiling output
+perf.data
+perf.data.old
 
 # Temporary files
 *.tmp
