@@ -5,6 +5,8 @@
 *.mod.c
 *.symvers
 modules.order
+Module.symvers
+.tmp_versions/
 
 # Large/root filesystem
 rootfs/
@@ -12,6 +14,14 @@ backups/
 
 # Archives
 *.zip
+
+# New generated userspace outputs
+ASSIGNMENT02/app/bin/
+LA02_20LESSON/*/ioctl_test
+
+# New profiling output
+perf.data
+perf.data.old
 
 # Temporary files
 *.tmp

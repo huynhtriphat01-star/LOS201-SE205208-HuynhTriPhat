@@ -1,4 +1,6 @@
-KDIR := $(HOME)/embedded_lab1/kernel/linux-5.15
+KDIR ?= /lib/modules/$(shell uname -r)/build
+ARCH ?= arm
+CROSS_COMPILE ?= arm-linux-gnueabihf-
 
 obj-m += counter_driver.o
 
@@ -6,11 +8,11 @@ obj-m += counter_driver.o
 
 all:
 	$(MAKE) -C $(KDIR) M=$(CURDIR) \
-		ARCH=arm \
-		CROSS_COMPILE=arm-linux-gnueabihf- \
+		ARCH=$(ARCH) \
+		CROSS_COMPILE=$(CROSS_COMPILE) \
 		KCFLAGS="-march=armv7-a" modules
 
 clean:
 	$(MAKE) -C $(KDIR) M=$(CURDIR) \
-		ARCH=arm \
-		CROSS_COMPILE=arm-linux-gnueabihf- clean
+		ARCH=$(ARCH) \
+		CROSS_COMPILE=$(CROSS_COMPILE) clean

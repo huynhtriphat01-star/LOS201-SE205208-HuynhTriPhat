@@ -3,7 +3,7 @@
  * File: sms_sensor_driver.c
  * Purpose: Simulated temperature and humidity sensor driver
  *
- * Author: [Your name and student ID]
+ * Author: Huynh Tri Phat - SE205208
  */
 
 #include <linux/module.h>

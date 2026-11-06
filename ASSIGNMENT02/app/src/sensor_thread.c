@@ -2,7 +2,7 @@
  * File: sensor_thread.c
  * Purpose: Sensor acquisition thread
  * Assignment: ASSIGNMENT-02
- * Author: Dien ten va MSSV
+ * Author: Huynh Tri Phat - SE205208
  * Date: 2026-10-20
  */
 

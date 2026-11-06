@@ -1,8 +1,10 @@
-# Reference build scaffold, NOT a working driver source.
-KDIR ?= $(HOME)/embedded_lab1/kernel/linux-5.15
+# Historical duplicate. Set KDIR to the configured target kernel build tree.
+KDIR ?= /lib/modules/$(shell uname -r)/build
+ARCH ?= arm
+CROSS_COMPILE ?= arm-linux-gnueabihf-
 obj-m += sms_sensor_driver.o
 .PHONY: arm clean
 arm:
-	$(MAKE) -C $(KDIR) ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- M=$(CURDIR) modules
+	$(MAKE) -C $(KDIR) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) M=$(CURDIR) modules
 clean:
-	$(MAKE) -C $(KDIR) ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- M=$(CURDIR) clean
+	$(MAKE) -C $(KDIR) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) M=$(CURDIR) clean
