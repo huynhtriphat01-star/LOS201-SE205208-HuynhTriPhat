@@ -422,7 +422,7 @@ Application files:
 
 ```mermaid
 flowchart LR
-    Device[/dev/sms_sensor] --> Sensor[Sensor thread]
+    Device["/dev/sms_sensor"] --> Sensor[Sensor thread]
     Mock[Mock source] --> Sensor
     Sensor --> Ring[Circular buffer]
     Ring --> Processor[Processor thread]
