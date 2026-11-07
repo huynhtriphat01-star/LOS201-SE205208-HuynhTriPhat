@@ -53,7 +53,7 @@ Shared headers define ABI numbers and fixed layouts. Unknown commands return
 
 ```mermaid
 flowchart TD
-    Device[/dev/sms_sensor or mock source] --> Sensor[Sensor thread]
+    Device["/dev/sms_sensor or mock source"] --> Sensor[Sensor thread]
     Sensor -->|owns produced sample| Ring[Circular buffer]
     Ring --> Processor[Processor thread]
     Processor -->|alarm message| AQ[POSIX alarm queue]

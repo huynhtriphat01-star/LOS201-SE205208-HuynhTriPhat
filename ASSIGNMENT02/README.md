@@ -5,7 +5,7 @@ userspace pipeline.
 
 ```mermaid
 flowchart LR
-    Driver[/dev/sms_sensor] --> Sensor[Sensor thread]
+    Driver["/dev/sms_sensor"] --> Sensor[Sensor thread]
     Mock[Mock generator] --> Sensor
     Sensor --> Buffer[Circular buffer]
     Buffer --> Processor[Processor thread]
