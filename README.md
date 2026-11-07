@@ -148,7 +148,7 @@ flowchart LR
     UBoot --> Kernel[Linux zImage]
     UBoot --> DTB[Device Tree Blob]
     Kernel --> Initramfs[BusyBox initramfs]
-    Initramfs --> Init[/init]
+    Initramfs --> Init["/init"]
     Init --> Shell[BusyBox shell]
 ```
 

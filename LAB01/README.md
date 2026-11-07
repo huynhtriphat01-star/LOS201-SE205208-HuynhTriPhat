@@ -12,8 +12,8 @@ flowchart LR
     UBoot --> Kernel[zImage]
     UBoot --> DTB[vexpress-v2p-ca9.dtb]
     Kernel --> Initramfs[BusyBox initramfs]
-    Initramfs --> Init[/init]
-    Init --> Shell[/bin/sh]
+    Initramfs --> Init["/init"]
+    Init --> Shell["/bin/sh"]
 ```
 
 ## Inputs
